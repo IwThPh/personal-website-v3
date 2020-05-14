@@ -1,0 +1,190 @@
+body {
+    @include scrollbars(6px, $offwhite, $sec-color);
+    background-color: $offwhite;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    color: #9c9c9c;
+    width: 200px;
+    overflow-x: hidden;
+    border-right: 5px solid $sec-color;
+
+    .nav-item {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 300;
+        display: block;
+        text-align: right;
+
+        &:link,
+        &:visited {
+            color: #9c9c9c;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+            color: $sec-color;
+            text-decoration: none;
+        }
+    }
+
+    .nav-item.active {
+        color: $sec-color !important;
+    }
+
+    .nav-pointer {
+        position: absolute;
+        height: 33px;
+        width: 22px;
+        z-index: 2;
+        transition: 0.5s;
+        right: -22px;
+        top: 33px;
+        transform: translateY(-50%);
+
+        polygon {
+            fill: $sec-color;
+        }
+    }
+
+    .links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding-right: 22px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.section {
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 0 auto;
+    padding: 50px;
+
+
+    .section-header {
+        &::before {
+            display: block;
+            position: absolute;
+            content: ' ';
+            background-image:url("data:image/svg+xml,%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' width='100mm' height='100mm' viewBox='0 0 100 100' version='1.1' id='svg8'%3E%3Cdefs id='defs2' /%3E%3Cmetadata id='metadata5'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title /%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg id='layer1'%3E%3Cpath style='fill:%23#{str-slice(#{$pri-color}, 2)};' id='path839' d='m 87.940841,86.422779 -40.901404,0 -40.9014056,0 L 26.588734,51.001124 47.039437,15.579468 67.490138,51.001123 Z' transform='matrix(1.2224519,0,0,1.4115659,-7.5034481,-21.991445)' /%3E%3C/g%3E%3C/svg%3E%0A");
+            background-size: 50px 50px;
+            transform: translate(-65px, -10px) rotate(90deg);
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    .section-cont{
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.about-section {
+    max-width: 1000px;
+
+    .img-stack {
+        display: block;
+        position: relative;
+        height: 200px;
+        margin: 0 auto;
+
+        .clip-border {
+            margin: 0 auto;
+            position: absolute;
+            display: block;
+            border: 0;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            margin-left: -100px;
+            top: 50%;
+            margin-top: -100px;
+            background: $pri-color;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .second {
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            top: 50%;
+            margin-top: -95px;
+            background: $sec-color;
+        }
+
+        .portrait {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 190px;
+            height: 190px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    }
+}
+
+.project-section {
+    max-width: 1000px;
+}
+
+.experience-section {
+    max-width: 1000px;
+}
+
+.hero-section {
+    background-image: linear-gradient(#474747c2, #474747c2),
+        url("../img/heroimage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 97vh;
+
+    .hero-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 40%;
+
+        h2 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: $pri-color;
+            font-weight: 700;
+        }
+    }
+
+    .hero-social {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 40%;
+        color: white;
+        font-weight: 400;
+    }
+}
+
+.footer-section {
+    height: 200px;
+    margin: 0 auto 0;
+    background-color: $sec-color;
+}

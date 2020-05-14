@@ -1,8 +1,28 @@
+html {
+    scroll-behavior: smooth;
+}
+
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+//Mixins
+@import 'scrollbars';
 
 // Variables
 @import 'variables';
 
-// Bootstrap
+// Sections
+@import 'home';
+
 @import '~bootstrap/scss/bootstrap';
+
+*::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: $sec-color;
+}
+
+*::selection {
+    color: white;
+    background: $sec-color;
+}

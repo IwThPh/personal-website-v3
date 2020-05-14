@@ -1,32 +1,54 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 const app = new Vue({
     el: '#app',
 });
+
+$(document).ready(
+    function () {
+        const pointer = document.querySelector(".nav-pointer");
+        const items = document.querySelectorAll('.nav-item');
+
+        function handlePointer(el) {
+            items.forEach(item => {
+                item.classList.remove('active');
+            });
+            if (el == null) {
+                pointer.style.top = `33px`;
+                pointer.style.right = `-22px`;
+            } else {
+                pointer.style.top = `${el.offsetTop + pointer.offsetHeight}px`;
+                pointer.style.right = `0`;
+                el.classList.add('active');
+            }
+        }
+        items.forEach((item, index) => {
+            item.addEventListener('click', (e) => {
+                handlePointer(e.target)
+            });
+            item.classList.contains('active') && handlePointer(item);
+        });
+
+        var section1Height = $('.about-section').offset().top;
+        var section2Height = $('.project-section').offset().top;
+        var section3Height = $('.experience-section').offset().top;
+        $(window).scroll(function () {
+            var winTop = $(window).scrollTop();
+            var winHeight = $(window).height();
+            var winOff = winTop + (winHeight / 2);
+            if (winOff >= section1Height && winOff <= section2Height) {
+                handlePointer(items.item(0));
+            } else if (winOff >= section2Height && winOff <= section3Height) {
+                handlePointer(items.item(1));
+            } else if (winOff >= section3Height) {
+                handlePointer(items.item(2));
+            } else {
+                handlePointer(null);
+            }
+        });
+    }
+);
