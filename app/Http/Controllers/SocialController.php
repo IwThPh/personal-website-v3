@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\social;
+use App\Social;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SocialController extends Controller
 {
@@ -14,7 +15,7 @@ class SocialController extends Controller
      */
     public function index()
     {
-        //
+        return response(Social::all()->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**
@@ -41,10 +42,10 @@ class SocialController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\social  $social
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function show(social $social)
+    public function show(Social $social)
     {
         //
     }
@@ -52,10 +53,10 @@ class SocialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\social  $social
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function edit(social $social)
+    public function edit(Social $social)
     {
         //
     }
@@ -64,10 +65,10 @@ class SocialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\social  $social
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, social $social)
+    public function update(Request $request, Social $social)
     {
         //
     }
@@ -75,11 +76,12 @@ class SocialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\social  $social
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function destroy(social $social)
+    public function destroy(Social $social)
     {
-        //
+        Social::destroy($id);
+        return response(null, Response::HTTP_OK);
     }
 }

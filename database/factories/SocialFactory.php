@@ -10,5 +10,6 @@ $factory->define(Social::class, function (Faker $faker) {
         'project_id' => null,
         'name' => $faker->company,
         'ref' => '#',
+        'fa' => 'fas fa-hashtag'
     ];
 });

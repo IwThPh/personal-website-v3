@@ -18,6 +18,7 @@ class CreateSocialsTable extends Migration
             $table->foreignId('project_id')->nullable()->constrained('projects')->onDelete('set null');
             $table->string('name');
             $table->string('ref');
+            $table->string('fa');
             $table->timestamps();
         });
     }
