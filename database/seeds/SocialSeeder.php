@@ -11,6 +11,10 @@ class SocialSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Social::class, 10)->create();
+        factory(\App\Social::class, 5)->create();
+        \App\Project::all()->map(function ($p){
+            $p->socials()->save(factory(\App\Social::class)->create());
+            $p->socials()->save(factory(\App\Social::class)->create());
+        });
     }
 }

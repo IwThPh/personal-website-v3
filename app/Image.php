@@ -13,12 +13,4 @@ class Image extends Model
     {
         return $this->morphedByMany('App\Project', 'imageable');
     }
-
-    /**
-     * Get all of the socials that are assigned this tag.
-     */
-    public function socials()
-    {
-        return $this->morphedByMany('App\Social', 'imageable');
-    }
 }

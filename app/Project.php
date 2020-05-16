@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+     /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['skills', 'socials', 'images'];
+
     /**
      * The skills that belong to the project.
      */

@@ -12,5 +12,14 @@ class ProjectSeeder extends Seeder
     public function run()
     {
         factory(\App\Project::class, 5)->create();
+        \App\Project::all()->map(function ($p){
+            $p->images()->save(factory(\App\Image::class)->create());
+            $p->skills()->save(\App\Skill::get()->random());
+            $p->skills()->save(\App\Skill::get()->random());
+            $p->skills()->save(\App\Skill::get()->random());
+            $p->skills()->save(\App\Skill::get()->random());
+            $p->skills()->save(\App\Skill::get()->random());
+            $p->skills()->save(\App\Skill::get()->random());
+        });
     }
 }

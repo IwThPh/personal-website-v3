@@ -9,6 +9,6 @@ $factory->define(Project::class, function (Faker $faker) {
     return [
         //
         'name' => $faker->catchPhrase,
-        'desc' => $faker->sentence,
+        'desc' => $faker->paragraph,
     ];
 });

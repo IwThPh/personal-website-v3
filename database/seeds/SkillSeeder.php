@@ -11,6 +11,6 @@ class SkillSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Social::class, 30)->create();
+        factory(\App\Skill::class, 30)->create();
     }
 }
