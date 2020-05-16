@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $socials = App\Social::all()->whereNull('project_id');
+    return view('welcome')->with('socials', $socials);
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Socials
+Route::get('/socials', 'SocialController@index');
+
+//Projects
 Route::get('/projects', 'ProjectController@index');

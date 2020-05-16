@@ -2,11 +2,20 @@
 $body-bg: #f5f5f5;
 
 // Typography
-$font-family-sans-serif: 'Poppins', sans-serif;
+$font-family-sans-serif: "Poppins", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-$pri-color: #56D0EF;
-$sec-color: #F08155;
+$pri-color: #56d0ef;
+$sec-color: #f08155;
 $offwhite: #f5f5f5;
 $offblack: #0c0c0c;
+
+$primary: $pri-color;
+$secondary: $sec-color;
+$success: $sec-color;
+$info: $pri-color;
+$warning: $pri-color;
+$danger: $sec-color;
+$light: $offwhite;
+$dark: $offblack;

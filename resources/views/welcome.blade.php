@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Iwan Phillips - Developer</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:200,600" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iwan Phillips - Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,600" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://kit.fontawesome.com/36b3b9ba0e.js" crossorigin="anonymous"></script>
+    <script>
+        window.Laravel = { csrfToken:'{{ csrf_token() }}' }
+    </script>
+</head>
 
-    </head>
-    <body >
-        <div id="app">
-
+<body>
+    <div id="app">
+        <div class="mobilenav-cont">
+            <div class="mobilenav">
+                <div class="hamburger-cont">
+                </div>
+            </div>
+            <div class="menu-wrap">
+                <input type="checkbox" class="toggler" id="toggler">
+                <div class="hamburger">
+                    <div></div>
+                </div>
+                <div class="menu">
+                    <div>
+                        <div>
+                            <ul>
+                                <li><a href="#about" class="mobile-nav-item">about me</a></li>
+                                <li><a href="#projects" class="mobile-nav-item">projects</a></li>
+                                <li><a href="#experience" class="mobile-nav-item">experience</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="sidenav">
             <div class="links">
                 <a href="#about" class="nav-item">about me</a>
@@ -26,52 +51,60 @@
                 </div>
             </div>
         </div>
+
         <div class="hero-section">
             <div class="hero-container">
-            <h2>hi, my name is</h2>
-            <h1>Iwan Phillips</h1>
-            <h2>i’m a software developer in the UK.</h2>
+                <h2>hi, my name is</h2>
+                <h1>Iwan Phillips</h1>
+                <h2>i’m a software developer in the UK.</h2>
             </div>
             <div class="hero-social">
-                social links here.
+                @foreach ($socials as $s)
+                <a href="{{$s->ref}}">{{$s->name}}</a>
+                @endforeach
             </div>
         </div>
 
         <div class="section about-section">
-            <a name="about"></a>
+            <a name="about" class="anchor"></a>
             <h2 class="section-header">about me</h2>
             <div class="section-cont row">
-            <div class="col-sm">
-                <p>
-                    My name is Iwan Phillips.
+                <div class="col-sm">
+                    <p>
+                        My name is Iwan Phillips.
 
-I’m a 20 year old, software developer based in the UK.
-I mainly work on Front-end web development, but enjoy exploring the full technology stack.
-                </p>
-            </div>
-            <div class="col-sm">
-                <div class="img-stack">
-            <div class="clip-border second"></div>
-            <div class="clip-border"><img src="{{URL::asset("images/me.jpg")}}" alt="Me" class="portrait">
-            </div>
+                        I’m a 20 year old, software developer based in the UK.
+                        I mainly work on Front-end web development, but enjoy exploring the full technology stack.
+                    </p>
                 </div>
+                <div class="col-sm">
+                    <div class="img-stack">
+                        <div class="clip-border second"></div>
+                        <div class="clip-border"><img src="{{URL::asset("images/me.jpg")}}" alt="Me" class="portrait">
+                        </div>
+                    </div>
 
+                </div>
             </div>
-</div>
         </div>
 
         <div class="section project-section">
-            <a name="projects"></a>
+            <a name="projects" class="anchor"></a>
             <h2 class="section-header">projects</h2>
+            <projects></projects>
         </div>
 
         <div class="section experience-section">
-            <a name="experience"></a>
+            <a name="experience" class="anchor"></a>
             <h2 class="section-header">experience</h2>
         </div>
 
-        <div class="section footer-section"></div>
+        <div class="section footer-section">
         </div>
-     <script type="text/javascript" src="{{URL::asset('js/app.js')}}"></script>
-    </body>
+
+    </div>
+
+    <script type="text/javascript" src="{{URL::asset('js/app.js')}}"></script>
+</body>
+
 </html>

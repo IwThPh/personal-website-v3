@@ -1,20 +1,23 @@
 html {
-    scroll-behavior: smooth;
+    @media (min-width: 1201px) {
+        scroll-behavior: smooth;
+    }
 }
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 //Mixins
-@import 'scrollbars';
+@import "scrollbars";
 
 // Variables
-@import 'variables';
+@import "variables";
 
+@import "nav";
 // Sections
-@import 'home';
+@import "home";
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 *::-moz-selection {
     /* Code for Firefox */
