@@ -37646,7 +37646,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "section-cont p-4" }, [
+  return _c("div", { staticClass: "section-cont p-sm-4" }, [
     _c(
       "div",
       { staticClass: "d-flex flex-row" },

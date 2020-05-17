@@ -1,6 +1,7 @@
 body {
     @include scrollbars(6px, $offwhite, $sec-color);
     background-color: $offwhite;
+    overflow-x: hidden;
 }
 
 a.anchor {
@@ -260,7 +261,29 @@ a.anchor {
 }
 
 .footer-section {
-    height: 200px;
+    .section-cont {
+        max-width: 992px;
+        margin: 0 auto;
+    }
+    min-height: 200px;
     margin: 0 auto 0;
     background-color: $sec-color;
+    color: white;
+    hr {
+        border-top: 1px solid white;
+    }
+    a,
+    a:link,
+    a:visited {
+        color: #f5f5f5;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $pri-color;
+        text-decoration: none;
+    }
+    a:active {
+        color: white;
+        text-decoration: none;
+    }
 }

@@ -30,3 +30,16 @@ html {
     color: white;
     background: $sec-color;
 }
+
+.footer-section *::-moz-selection,
+.hero-section *::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: $pri-color;
+}
+
+.footer-section *::selection,
+.hero-section *::selection {
+    color: white;
+    background: $pri-color;
+}

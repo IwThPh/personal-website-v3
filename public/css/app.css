@@ -260,6 +260,7 @@
 
 body {
   background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -543,9 +544,36 @@ a.anchor {
 }
 
 .footer-section {
-  height: 200px;
+  min-height: 200px;
   margin: 0 auto 0;
   background-color: #f08155;
+  color: white;
+}
+
+.footer-section .section-cont {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.footer-section hr {
+  border-top: 1px solid white;
+}
+
+.footer-section a,
+.footer-section a:link,
+.footer-section a:visited {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #56d0ef;
+  text-decoration: none;
+}
+
+.footer-section a:active {
+  color: white;
+  text-decoration: none;
 }
 
 /*!
@@ -11490,5 +11518,23 @@ a.text-dark:focus {
 *::selection {
   color: white;
   background: #f08155;
+}
+
+.footer-section *::-moz-selection,
+.hero-section *::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #56d0ef;
+}
+
+.footer-section *::-moz-selection, .hero-section *::-moz-selection {
+  color: white;
+  background: #56d0ef;
+}
+
+.footer-section *::selection,
+.hero-section *::selection {
+  color: white;
+  background: #56d0ef;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="section-cont p-4">
+  <div class="section-cont p-sm-4">
     <div class="d-flex flex-row">
       <div class="tab w-25">
         <button
