@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div id='dashboard' class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -20,4 +20,5 @@
         </div>
     </div>
 </div>
+    <script type="text/javascript" src="{{URL::asset('js/dashboard.js')}}"></script>
 @endsection

@@ -20,9 +20,10 @@ Route::get('/', function () {
     ]);
 });
 
-Auth::routes();
+//Login Routes...
+Auth::routes(['register' => false, 'reset' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dash', 'HomeController@index')->name('dashboard');
 
 //Socials
 Route::get('/socials', 'SocialController@index');
