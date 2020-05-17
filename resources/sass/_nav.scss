@@ -32,6 +32,34 @@
     left: 0;
     width: 100%;
     z-index: 1;
+    ul {
+        padding: 0;
+    }
+}
+
+.menu-wrap {
+    .socials {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        li {
+            font-size: 1.2rem !important;
+        }
+        a {
+            text-decoration: none;
+            &:visited,
+            &:link {
+                color: white;
+            }
+            &:hover,
+            &:active {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 .menu-wrap .toggler {

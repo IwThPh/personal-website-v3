@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\experience;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ExperienceController extends Controller
 {
@@ -14,7 +15,8 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        //
+        return response(Experience::all()->sortBy('start_at')
+                ->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**

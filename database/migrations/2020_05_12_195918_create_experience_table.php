@@ -17,6 +17,7 @@ class CreateExperienceTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('location');
+            $table->text('desc');
             $table->date('start_at');
             $table->date('end_at')->nullable();
             $table->timestamps();

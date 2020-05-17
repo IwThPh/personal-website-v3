@@ -47,6 +47,37 @@
   z-index: 1;
 }
 
+.menu-wrap ul {
+  padding: 0;
+}
+
+.menu-wrap .socials {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.menu-wrap .socials li {
+  font-size: 1.2rem !important;
+}
+
+.menu-wrap .socials a {
+  text-decoration: none;
+}
+
+.menu-wrap .socials a:visited,
+.menu-wrap .socials a:link {
+  color: white;
+}
+
+.menu-wrap .socials a:hover,
+.menu-wrap .socials a:active {
+  color: white;
+  text-decoration: none;
+}
+
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
@@ -185,6 +216,46 @@
   color: inherit;
   text-decoration: none;
   transition: color 0.4s ease;
+}
+
+/* Style the tab */
+
+.tab {
+  border-right: 5px solid #56d0ef;
+  background-color: #f5f5f5;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+  background-color: inherit;
+  color: #0c0c0c;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+
+.tab button.active {
+  background-color: #56d0ef;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  padding: 0px 12px;
+  border: 2px solid #56d0ef;
 }
 
 body {
@@ -445,6 +516,13 @@ a.anchor {
   max-width: 95%;
   color: white;
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .hero-section .hero-social {
+    display: none;
+    opacity: 0;
+  }
 }
 
 .hero-section .hero-social a {

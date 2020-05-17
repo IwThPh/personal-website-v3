@@ -34,6 +34,11 @@
                                 <li><a href="#projects" class="mobile-nav-item">projects</a></li>
                                 <li><a href="#experience" class="mobile-nav-item">experience</a></li>
                             </ul>
+            <div class="socials d-flex flex-wrap justify-content-center">
+                @foreach ($socials as $s)
+                <span class="m-2"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>{{$s->name}}</a></span>
+                @endforeach
+            </div>
                         </div>
                     </div>
                 </div>
@@ -58,9 +63,9 @@
                 <h1>Iwan Phillips</h1>
                 <h2>i’m a software developer in the UK.</h2>
             </div>
-            <div class="hero-social">
+            <div class="hero-social d-flex flex-wrap justify-content-center align-items-center">
                 @foreach ($socials as $s)
-                <a href="{{$s->ref}}">{{$s->name}}</a>
+                <span class="m-4 d-inline-flex"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>{{$s->name}}</a></span>
                 @endforeach
             </div>
         </div>
@@ -97,6 +102,7 @@
         <div class="section experience-section">
             <a name="experience" class="anchor"></a>
             <h2 class="section-header">experience</h2>
+            <experiences></experiences>
         </div>
 
         <div class="section footer-section">

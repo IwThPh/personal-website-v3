@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $socials = App\Social::all()->whereNull('project_id');
-    return view('welcome')->with('socials', $socials);
+    return view('welcome')->with([
+        'socials' => $socials,
+    ]);
 });
 
 Auth::routes();
@@ -27,3 +29,6 @@ Route::get('/socials', 'SocialController@index');
 
 //Projects
 Route::get('/projects', 'ProjectController@index');
+
+//Experience
+Route::get('/experiences', 'ExperienceController@index');
