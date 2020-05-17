@@ -2052,6 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
       project: {
         id: "",
         name: "",
+        brief: "",
         desc: "",
         images: [],
         skills: [],
@@ -37756,7 +37757,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-center" }, [
-                  _vm._v(_vm._s(project.desc))
+                  _vm._v(_vm._s(project.brief))
                 ]),
                 _vm._v(" "),
                 _c(

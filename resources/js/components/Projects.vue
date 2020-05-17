@@ -14,7 +14,7 @@
         />
         <div class="col-lg-8 col-md-12 m-4 justify-content-center">
           <h3 class="section-subheader">{{ project.name }}</h3>
-          <p class="text-center">{{ project.desc }}</p>
+          <p class="text-center">{{ project.brief }}</p>
           <div class="row justify-content-center">
             <span
               class="badge badge-pill badge-secondary m-1"
@@ -39,6 +39,7 @@ export default {
       project: {
         id: "",
         name: "",
+        brief: "",
         desc: "",
         images: [],
         skills: [],
