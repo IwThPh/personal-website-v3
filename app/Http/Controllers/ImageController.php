@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\image;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ImageController extends Controller
 {
@@ -14,7 +15,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        return response(Image::all()->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**

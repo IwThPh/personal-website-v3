@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\skill;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SkillController extends Controller
 {
@@ -14,7 +15,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        return response(Skill::all()->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**

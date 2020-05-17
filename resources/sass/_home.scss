@@ -4,6 +4,27 @@ body {
     overflow-x: hidden;
 }
 
+.dashnav {
+    li {
+        cursor: pointer;
+        list-style: none;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-right: 5px solid #ccc;
+        &.active {
+        border-right: 5px solid $sec-color;
+        }
+        &:hover{
+            background-color: $offwhite;
+        }
+    }
+
+}
+
+.active {
+    color: $sec-color;
+}
+
 a.anchor {
     display: block;
     position: relative;

@@ -33,3 +33,9 @@ Route::get('/projects', 'ProjectController@index');
 
 //Experience
 Route::get('/experiences', 'ExperienceController@index');
+
+//Images
+Route::get('/imageables', 'ImageController@index');
+
+//Skills
+Route::get('/skills', 'SkillController@index');
