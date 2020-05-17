@@ -15,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return response(Project::all()->jsonSerialize(), Response::HTTP_OK);
+        return response(Project::all()->sortBy("rank")->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**

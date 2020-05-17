@@ -2046,6 +2046,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log("Project Component Mounted.");
   },
+  computed: {
+    byRank: function byRank() {
+      return _.orderBy(this.projects, "rank", "asc");
+    }
+  },
   data: function data() {
     return {
       projects: [],
@@ -2054,6 +2059,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "",
         brief: "",
         desc: "",
+        rank: "",
         images: [],
         skills: [],
         socials: [],
@@ -37727,11 +37733,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "section-cont" }, [
+  return _c("div", { staticClass: "section-cont p-4" }, [
     _c(
       "div",
       { staticClass: "col justify-content-center" },
-      _vm._l(_vm.projects, function(project) {
+      _vm._l(_vm.byRank, function(project) {
         return _c(
           "div",
           {
@@ -37768,7 +37774,7 @@ var render = function() {
                       "span",
                       {
                         key: project.id + "s" + skill.id,
-                        staticClass: "badge badge-pill badge-secondary m-1"
+                        staticClass: "badge badge-pill badge-secondary p-2 m-1"
                       },
                       [_vm._v(_vm._s(skill.name))]
                     )

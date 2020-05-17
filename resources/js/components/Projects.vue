@@ -1,9 +1,9 @@
 <template>
-  <div class="section-cont">
+  <div class="section-cont p-4">
     <div class="col justify-content-center">
       <div
         class="row m-0 my-2 m-sm-4 justify-content-center"
-        v-for="project in projects"
+        v-for="project in byRank"
         v-bind:key="project.id"
       >
         <img
@@ -17,7 +17,7 @@
           <p class="text-center">{{ project.brief }}</p>
           <div class="row justify-content-center">
             <span
-              class="badge badge-pill badge-secondary m-1"
+              class="badge badge-pill badge-secondary p-2 m-1"
               v-for="skill in project.skills"
               v-bind:key="project.id+'s'+skill.id"
             >{{ skill.name }}</span>
@@ -33,6 +33,11 @@ export default {
   mounted() {
     console.log("Project Component Mounted.");
   },
+  computed: {
+    byRank: function() {
+      return _.orderBy(this.projects, "rank", "asc");
+    }
+  },
   data() {
     return {
       projects: [],
@@ -41,6 +46,7 @@ export default {
         name: "",
         brief: "",
         desc: "",
+        rank: "",
         images: [],
         skills: [],
         socials: [],
