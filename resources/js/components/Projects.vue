@@ -12,7 +12,7 @@
           :height="project.images[0].height"
           class="rounded mx-auto border-5 border-primary"
         />
-        <div class="col-lg-8 col-md-12 m-4 justify-content-center">
+        <div @click="show(project)" class="col-lg-8 col-md-12 m-4 justify-content-center">
           <h3 class="section-subheader">{{ project.name }}</h3>
           <p class="text-center">{{ project.brief }}</p>
           <div class="row justify-content-center">
@@ -29,6 +29,9 @@
 </template>
 
 <script>
+
+import ProjectModal from './ProjectModal';
+
 export default {
   mounted() {
     console.log("Project Component Mounted.");
@@ -83,6 +86,17 @@ export default {
           this.projects = res;
         })
         .catch(err => console.log(err));
+    },
+    show(project) {
+      this.$modal.show(ProjectModal, {
+          project: project
+      },
+      {
+          scrollable: true,
+          adaptive: true,
+          height: 'auto',
+          width: 800,
+      },);
     }
   }
 };

@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div class="hero-section">
+        <div class="hero-section shadow">
             <div class="hero-container">
                 <h2>hi, my name is</h2>
                 <h1>Iwan Phillips</h1>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <div class="section about-section">
+        <div class="section about-section shadow">
             <a name="about" class="anchor"></a>
             <h2 class="section-header">about me</h2>
             <div class="section-cont row">
@@ -94,13 +94,13 @@
             </div>
         </div>
 
-        <div class="section project-section">
+        <div class="section project-section shadow">
             <a name="projects" class="anchor"></a>
             <h2 class="section-header">projects</h2>
             <projects></projects>
         </div>
 
-        <div class="section experience-section">
+        <div class="section experience-section shadow">
             <a name="experience" class="anchor"></a>
             <h2 class="section-header">experience</h2>
             <experiences></experiences>

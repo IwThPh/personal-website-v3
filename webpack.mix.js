@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js/app.js')
-    .js('resources/js/dashboard.js', 'public/js/dashboard.js')
-    .sass('resources/sass/app.scss', 'public/css/app.css')
-    .copyDirectory('storage/images', 'public/images')
-    .copyDirectory('resources/img', 'public/images');
+mix.js("resources/js/app.js", "public/js/app.js")
+    .js("resources/js/dashboard.js", "public/js/dashboard.js")
+    .sass("resources/sass/app.scss", "public/css/app.css")
+    .copyDirectory("storage/images", "public/images")
+    .copyDirectory("resources/img", "public/images");
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            "@": path.resolve("resources/sass")
+        }
+    }
+});

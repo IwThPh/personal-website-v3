@@ -4,6 +4,22 @@ body {
     overflow-x: hidden;
 }
 
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.close-btn::before {
+    content: "X";
+    color: #c9c9c9;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    &:hover {
+        color: $sec-color;
+    }
+}
+
 .dashnav {
     li {
         cursor: pointer;
@@ -12,13 +28,12 @@ body {
         font-size: 1rem;
         border-right: 5px solid #ccc;
         &.active {
-        border-right: 5px solid $sec-color;
+            border-right: 5px solid $sec-color;
         }
-        &:hover{
+        &:hover {
             background-color: $offwhite;
         }
     }
-
 }
 
 .active {
@@ -110,12 +125,15 @@ a.anchor {
     box-sizing: border-box;
     background-color: white;
     margin-left: 20px;
+    margin-bottom: 20px;
     padding: 50px;
     @media (min-width: 1400px) {
         margin: 0 auto;
+        margin-bottom: 20px;
     }
     @media (max-width: 1200px) {
         margin: 0 auto;
+        margin-bottom: 20px;
     }
     @media (max-width: 768px) {
         padding: 20px;
@@ -221,6 +239,7 @@ a.anchor {
 
 .experience-section {
     max-width: 992px;
+    margin-bottom: 0px;
 }
 
 .hero-section {

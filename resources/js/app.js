@@ -1,8 +1,16 @@
+import VModal from "vue-js-modal";
+import VueAwesomeSwiper from "vue-awesome-swiper";
+
+import 'swiper/css/swiper.css'
+
 require("./bootstrap");
 
 window.Vue = require("vue");
+Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
+Vue.use(VueAwesomeSwiper);
 
 Vue.component("projects", require("./components/Projects.vue").default);
+Vue.component("projectModal", require("./components/ProjectModal.vue").default);
 Vue.component("experiences", require("./components/Experiences.vue").default);
 
 const app = new Vue({
