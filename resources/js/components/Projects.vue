@@ -7,9 +7,8 @@
         v-bind:key="project.id"
       >
         <img
-          v-bind:src="'images/' + project.images[0].filename"
-          :width="project.images[0].width"
-          :height="project.images[0].height"
+          v-bind:src="'storage/images/' + project.images[0].filename"
+          :width="200"
           class="rounded mx-auto border-5 border-primary"
         />
         <div @click="show(project)" class="col-lg-8 col-md-12 m-4 justify-content-center">

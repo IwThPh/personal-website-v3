@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     $socials = App\Social::all()->whereNull('project_id');
@@ -30,6 +30,11 @@ Route::get('/socials', 'SocialController@index');
 
 //Projects
 Route::get('/projects', 'ProjectController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/projects', 'ProjectController@store');
+    Route::patch('/projects/{project}', 'ProjectController@update');
+    Route::delete('/projects/{project}', 'ProjectController@delete');
+});
 
 //Experience
 Route::get('/experiences', 'ExperienceController@index');

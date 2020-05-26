@@ -37,7 +37,7 @@
                             <div class="socials d-flex flex-wrap justify-content-center">
                                 @foreach ($socials as $s)
                                 <span class="m-2"><a href="{{$s->ref}}"><i
-                                            class="{{$s->fa}}"></i>{{$s->name}}</a></span>
+                                            class="{{$s->fa}}"></i> {{$s->name}}</a></span>
                                 @endforeach
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                         <hr>
                         @foreach ($socials as $s)
                         <span class="d-flex flex-row m-2"><a href="{{$s->ref}}"><i
-                                    class="{{$s->fa}}"></i>{{$s->name}}</a></span>
+                                    class="{{$s->fa}}"></i> {{$s->name}}</a></span>
                         @endforeach
 
                     </div>

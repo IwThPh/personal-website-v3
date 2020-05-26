@@ -34,9 +34,8 @@
             <swiper-slide v-for="image in project.images" v-bind:key="project.id+'i'+image.id">
               <img
                 class="rounded"
-                :src="'images/' + image.filename"
-                :width="image.width"
-                :height="image.height"
+                :src="'storage/images/' + image.filename"
+                :width="400"
               />
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>

@@ -2063,7 +2063,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2108,7 +2107,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProjectModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProjectModal */ "./resources/js/components/ProjectModal.vue");
-//
 //
 //
 //
@@ -48562,9 +48560,8 @@ var render = function() {
                       _c("img", {
                         staticClass: "rounded",
                         attrs: {
-                          src: "images/" + image.filename,
-                          width: image.width,
-                          height: image.height
+                          src: "storage/images/" + image.filename,
+                          width: 400
                         }
                       })
                     ]
@@ -48623,9 +48620,8 @@ var render = function() {
             _c("img", {
               staticClass: "rounded mx-auto border-5 border-primary",
               attrs: {
-                src: "images/" + project.images[0].filename,
-                width: project.images[0].width,
-                height: project.images[0].height
+                src: "storage/images/" + project.images[0].filename,
+                width: 200
               }
             }),
             _vm._v(" "),

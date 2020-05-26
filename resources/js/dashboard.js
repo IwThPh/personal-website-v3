@@ -1,4 +1,5 @@
 import VueRouter from "vue-router";
+import VModal from "vue-js-modal";
 
 import router from "./dashboard/routes";
 import { VuejsDatatableFactory } from "vuejs-datatable";
@@ -6,6 +7,7 @@ import { VuejsDatatableFactory } from "vuejs-datatable";
 require("./bootstrap");
 
 window.Vue = require("vue");
+Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
 Vue.use(VueRouter);
 Vue.use(VuejsDatatableFactory);
 
@@ -15,6 +17,8 @@ Vue.component("skills", require("./dashboard/views/Skills.vue").default);
 Vue.component("images", require("./dashboard/views/Images.vue").default);
 Vue.component("experiences",require("./dashboard/views/Experiences.vue").default);
 Vue.component("socails", require("./dashboard/views/Socials.vue").default);
+
+Vue.component("projectForm", require("./dashboard/components/ProjectForm.vue").default);
 
 VuejsDatatableFactory.useDefaultType(false).registerTableType(
     "datatable",
