@@ -56,3 +56,8 @@ Route::get('/imageables', 'ImageController@index');
 
 //Skills
 Route::get('/skills', 'SkillController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/skills', 'SkillController@store');
+    Route::patch('/skills/{skill}', 'SkillController@update');
+    Route::delete('/skills/{skill}', 'SkillController@delete');
+});

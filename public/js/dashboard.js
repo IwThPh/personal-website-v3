@@ -2319,6 +2319,79 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scripts_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../scripts/form */ "./resources/js/scripts/form.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SkillForm",
+  props: ["skill"],
+  data: function data() {
+    return {
+      form: new _scripts_form__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        id: "",
+        name: ""
+      })
+    };
+  },
+  mounted: function mounted() {
+    console.log("Mounted");
+
+    if (this.skill !== null && this.skill !== "" && this.skill !== {} && this.skill !== undefined) {
+      console.log("Skill Recieved.");
+      this.form.id = this.skill.id;
+      this.form.name = this.skill.name;
+    }
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      if (this.skill === undefined) {
+        this.form.post("/skills").then(function () {
+          _this.$emit("close");
+        });
+      } else {
+        this.form.patch("/skills/" + this.skill.id).then(function () {
+          _this.$emit("close");
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js& ***!
@@ -2799,6 +2872,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_SkillForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/SkillForm */ "./resources/js/dashboard/components/SkillForm.vue");
 //
 //
 //
@@ -2808,6 +2882,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Skill Component Mounted.");
@@ -2848,6 +2940,19 @@ __webpack_require__.r(__webpack_exports__);
         _this.skills = res;
       })["catch"](function (err) {
         return console.log(err);
+      });
+    },
+    show: function show(id) {
+      this.$modal.show(_components_SkillForm__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        skill: _.find(this.skills, function (o) {
+          return o.id == id;
+        })
+      }, {
+        scrollable: true,
+        adaptive: true,
+        clickToClose: false,
+        height: "auto",
+        width: 800
       });
     }
   }
@@ -39701,6 +39806,110 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "p-4 d-flex flex-column" }, [
+    _c("div", {
+      staticClass: "close-btn",
+      on: {
+        click: function($event) {
+          return _vm.$emit("close")
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex-column" }, [
+      _c(
+        "form",
+        {
+          attrs: { action: "/skills" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+            },
+            keydown: function($event) {
+              return _vm.form.errors.clear($event.target.name)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "d-flex flex-wrap" }, [
+            _c("div", { staticClass: "form-group flex-grow-1 m-1" }, [
+              _c("label", { attrs: { for: "name" } }, [_vm._v("Skill Name:")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.name,
+                    expression: "form.name"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "name", name: "name" },
+                domProps: { value: _vm.form.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("name")
+                ? _c("span", {
+                    staticClass: "text-danger",
+                    domProps: {
+                      textContent: _vm._s(_vm.form.errors.get("name"))
+                    }
+                  })
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group text-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.submit()
+                  }
+                }
+              },
+              [_vm._v("Confirm")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1& ***!
@@ -40172,7 +40381,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "section-cont p-4" }, [
-    _c("h2", [_vm._v("Skills")]),
+    _c("div", { staticClass: "d-flex flex-row justify-content-between m-1" }, [
+      _c("h2", [_vm._v("Skills")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d-flex flex-row p-1" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary m-1",
+            on: {
+              click: function($event) {
+                return _vm.show()
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-plus" })]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.skill_id,
+              expression: "skill_id"
+            }
+          ],
+          staticClass: "form-control input-lg m-1",
+          attrs: { type: "number", id: "idSelect", placeholder: "Skill ID" },
+          domProps: { value: _vm.skill_id },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.skill_id = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-outline-primary m-1",
+            on: {
+              click: function($event) {
+                return _vm.show(_vm.skill_id)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-edit" })]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -56256,6 +56517,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectForm_vue_vue_type_template_id_7459b0bd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectForm_vue_vue_type_template_id_7459b0bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SkillForm.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/dashboard/components/SkillForm.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SkillForm.vue?vue&type=template&id=1962a1f5& */ "./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5&");
+/* harmony import */ var _SkillForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SkillForm.vue?vue&type=script&lang=js& */ "./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SkillForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/dashboard/components/SkillForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SkillForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SkillForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SkillForm.vue?vue&type=template&id=1962a1f5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SkillForm.vue?vue&type=template&id=1962a1f5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillForm_vue_vue_type_template_id_1962a1f5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

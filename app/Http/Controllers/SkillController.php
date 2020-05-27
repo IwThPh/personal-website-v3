@@ -19,16 +19,6 @@ class SkillController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,29 +26,15 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        //Validation
+        $data = $this->validateSkill($request);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\skill  $skill
-     * @return \Illuminate\Http\Response
-     */
-    public function show(skill $skill)
-    {
-        //
-    }
+        //Store
+        $skill = new Skill($data);
+        $skill->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\skill  $skill
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(skill $skill)
-    {
-        //
+        //Append
+        return response(null, Response::HTTP_OK);
     }
 
     /**
@@ -70,7 +46,13 @@ class SkillController extends Controller
      */
     public function update(Request $request, skill $skill)
     {
-        //
+        $data = $this->validateSkill($request);
+
+        $skill->name = $data['name'];
+
+        $skill->save();
+
+        return response(null, Response::HTTP_OK);
     }
 
     /**
@@ -81,6 +63,19 @@ class SkillController extends Controller
      */
     public function destroy(skill $skill)
     {
-        //
+        Skill::destroy($skill);
+        return response(null, Response::HTTP_OK);
+    }
+
+    /**
+     * Skill Validation
+     */
+    protected function validateSkill(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+        ];
+
+        return $this->validate($request, $rules);
     }
 }
