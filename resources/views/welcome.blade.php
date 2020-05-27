@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,600" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://kit.fontawesome.com/36b3b9ba0e.js" crossorigin="anonymous"></script>
+    <script defer src="{{URL::asset('js/fa/fa.js')}}"></script>
     <script>
         window.Laravel = { csrfToken:'{{ csrf_token() }}' }
     </script>
@@ -36,8 +36,8 @@
                             </ul>
                             <div class="socials d-flex flex-wrap justify-content-center">
                                 @foreach ($socials as $s)
-                                <span class="m-2"><a href="{{$s->ref}}"><i
-                                            class="{{$s->fa}}"></i> {{$s->name}}</a></span>
+                                <span class="m-2"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>
+                                        {{$s->name}}</a></span>
                                 @endforeach
                             </div>
                         </div>
@@ -75,21 +75,37 @@
             <a name="about" class="anchor"></a>
             <h2 class="section-header">about me</h2>
             <div class="section-cont row">
-                <div class="col-sm">
-                    <p>
-                        My name is Iwan Phillips.
-
-                        I’m a 20 year old, software developer based in the UK.
-                        I mainly work on Front-end web development, but enjoy exploring the full technology stack.
-                    </p>
-                </div>
-                <div class="col-sm">
+                <div class="col-sm m-1">
                     <div class="img-stack">
                         <div class="clip-border second"></div>
                         <div class="clip-border"><img src="{{URL::asset("images/me.jpg")}}" alt="Me" class="portrait">
                         </div>
                     </div>
+                </div>
+                <div class="col-sm m-1 my-3">
+                    <p>
+                        My name is Iwan Phillips.
 
+                        I am a 20 year old, software developer based in the UK.
+                        I enjoy working on projects involving a complete technology stack.
+                        Take a look at my past projects below.
+                    </p>
+                    <p class="d-none d-sm-inline">
+                        Aside from programming, I'm an avid snowboarder and try to get on the mountain as much as I can.
+                    </p>
+                </div>
+            </div>
+            <div class="my-4 mx-sm-5">
+                <h4 class="text-center">my skills</h4>
+                <div class="row m-1 justify-content-center">
+                    @foreach ($skills as $s)
+                    <span class="badge badge-pill badge-secondary p-2 m-1">{{ $s->name }}</span>
+                    @endforeach
+                </div>
+            </div>
+            <div class="my-4 mx-sm-5">
+                <div class="row m-1 justify-content-center">
+                    <a href="/cv"><div class="btn btn-outline-primary m-1">View Résumé</div></a>
                 </div>
             </div>
         </div>
@@ -114,8 +130,8 @@
                         <h5>Software Developer</h5>
                         <hr>
                         @foreach ($socials as $s)
-                        <span class="d-flex flex-row m-2"><a href="{{$s->ref}}"><i
-                                    class="{{$s->fa}}"></i> {{$s->name}}</a></span>
+                        <span class="d-flex flex-row m-2"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>
+                                {{$s->name}}</a></span>
                         @endforeach
 
                     </div>

@@ -15,8 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $socials = App\Social::all()->whereNull('project_id');
+    $skills = App\Skill::all();
     return view('welcome')->with([
+        'skills' => $skills,
         'socials' => $socials,
+    ]);
+});
+
+Route::get('/cv', function () {
+    $socials = App\Social::all()->whereNull('project_id');
+    $skills = App\Skill::all();
+    $projects = App\Project::all()->take(4)->chunk(2);
+    $experience = App\Experience::all();
+    return view('cv')->with([
+        'skills' => $skills,
+        'socials' => $socials,
+        'projects' => $projects,
+        'experience' => $experience,
     ]);
 });
 

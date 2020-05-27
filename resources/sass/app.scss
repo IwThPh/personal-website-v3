@@ -1,24 +1,33 @@
-html {
-    @media (min-width: 1201px) {
-        scroll-behavior: smooth;
-    }
-}
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-//Mixins
-@import "scrollbars";
-
 // Variables
 @import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  font-size: 0.9rem;
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.05rem;
+  }
+}
+
+//Mixins
+@import "scrollbars";
 
 @import "nav";
 @import "experiences";
 // Sections
 @import "home";
 
-@import "~bootstrap/scss/bootstrap";
+html {
+    @media (min-width: 1201px) {
+        scroll-behavior: smooth;
+    }
+}
 
 *::-moz-selection {
     /* Code for Firefox */

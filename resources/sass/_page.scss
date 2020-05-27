@@ -1,0 +1,53 @@
+html {
+    font-size: 0.8rem;
+}
+body {
+    line-height: 1.5 !important;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 12px "Poppins", sans-serif;
+}
+.page {
+    width: 210mm;
+    max-height: 297mm;
+    margin: 10mm auto;
+    border: 1px #d3d3d3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.subpage {
+    padding: 0.5cm;
+    height: 297mm;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html {
+        font-size: 1.14rem;
+    }
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        line-height: 1.5 !important;
+    }
+    a {
+        text-decoration: none;
+    }
+    .page {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 297mm;
+        box-shadow: none;
+        background: white;
+        page-break-after: always;
+    }
+}

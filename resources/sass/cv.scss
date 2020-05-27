@@ -1,0 +1,27 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+// Variables
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+@import "page";
+
+*::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: $sec-color;
+}
+
+*::selection {
+    color: white;
+    background: $sec-color;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $sec-color;
+    margin: 0.5em 0;
+    padding: 0;
+}
