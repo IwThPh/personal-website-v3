@@ -38,6 +38,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Experience
 Route::get('/experiences', 'ExperienceController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/experiences', 'ExperienceController@store');
+    Route::patch('/experiences/{experience}', 'ExperienceController@update');
+    Route::delete('/experiences/{experience}', 'ExperienceController@delete');
+});
 
 //Images
 Route::get('/imageables', 'ImageController@index');

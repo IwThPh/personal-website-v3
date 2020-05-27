@@ -20,16 +20,6 @@ class ExperienceController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,29 +27,15 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        //Validation
+        $data = $this->validateExperience($request);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function show(experience $experience)
-    {
-        //
-    }
+        //Store
+        $experience = new Experience($data);
+        $experience->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(experience $experience)
-    {
-        //
+        //Append
+        return response(null, Response::HTTP_OK);
     }
 
     /**
@@ -71,7 +47,17 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, experience $experience)
     {
-        //
+        $data = $this->validateExperience($request);
+
+        $experience->name = $data['name'];
+        $experience->location = $data['location'];
+        $experience->start_at = $data['start_at'];
+        $experience->end_at = $data['end_at'];
+        $experience->desc = $data['desc'];
+
+        $experience->save();
+
+        return response(null, Response::HTTP_OK);
     }
 
     /**
@@ -82,6 +68,24 @@ class ExperienceController extends Controller
      */
     public function destroy(experience $experience)
     {
-        //
+        Project::destroy($experience);
+        return response(null, Response::HTTP_OK);
     }
+
+    /**
+     * Experience Validation
+     */
+    protected function validateExperience(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+            'location' => 'required',
+            'start_at' => 'required|date',
+            'end_at' => 'nullable|date|after_or_equal:start_at',
+            'desc' => 'required',
+        ];
+
+        return $this->validate($request, $rules);
+    }
+
 }
