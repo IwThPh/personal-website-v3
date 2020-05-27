@@ -2319,6 +2319,130 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scripts_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../scripts/form */ "./resources/js/scripts/form.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SocialForm",
+  props: ["social"],
+  data: function data() {
+    return {
+      form: new _scripts_form__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        id: "",
+        project_id: "",
+        name: "",
+        ref: "",
+        fa: ""
+      })
+    };
+  },
+  mounted: function mounted() {
+    console.log("Mounted");
+
+    if (this.social !== null && this.social !== "" && this.social !== {} && this.social !== undefined) {
+      console.log("Social Recieved.");
+      this.form.id = this.social.id;
+      this.form.project_id = this.social.project_id;
+      this.form.name = this.social.name;
+      this.form.ref = this.social.ref;
+      this.form.fa = this.social.fa;
+    }
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      if (this.social === undefined) {
+        this.form.post("/socials").then(function () {
+          _this.$emit("close");
+        });
+      } else {
+        this.form.patch("/socials/" + this.social.id).then(function () {
+          _this.$emit("close");
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/views/Dashboard.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/views/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -2740,6 +2864,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_SocialForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/SocialForm */ "./resources/js/dashboard/components/SocialForm.vue");
 //
 //
 //
@@ -2749,6 +2874,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Social Component Mounted.");
@@ -2811,6 +2954,19 @@ __webpack_require__.r(__webpack_exports__);
         _this.socials = res;
       })["catch"](function (err) {
         return console.log(err);
+      });
+    },
+    show: function show(id) {
+      this.$modal.show(_components_SocialForm__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        social: _.find(this.socials, function (o) {
+          return o.id == id;
+        })
+      }, {
+        scrollable: true,
+        adaptive: true,
+        clickToClose: false,
+        height: "auto",
+        width: 800
       });
     }
   }
@@ -39545,6 +39701,215 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "p-4 d-flex flex-column" }, [
+    _c("div", {
+      staticClass: "close-btn",
+      on: {
+        click: function($event) {
+          return _vm.$emit("close")
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex-column" }, [
+      _c(
+        "form",
+        {
+          attrs: { action: "/socials" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+            },
+            keydown: function($event) {
+              return _vm.form.errors.clear($event.target.name)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "d-flex flex-wrap" }, [
+            _c("div", { staticClass: "form-group flex-grow-1 m-1" }, [
+              _c("label", { attrs: { for: "name" } }, [_vm._v("Social Name:")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.name,
+                    expression: "form.name"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "name", name: "name" },
+                domProps: { value: _vm.form.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("name")
+                ? _c("span", {
+                    staticClass: "text-danger",
+                    domProps: {
+                      textContent: _vm._s(_vm.form.errors.get("name"))
+                    }
+                  })
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group m-1" }, [
+              _c("label", { attrs: { for: "ref" } }, [_vm._v("Social Link:")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.ref,
+                    expression: "form.ref"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "ref", name: "ref" },
+                domProps: { value: _vm.form.ref },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "ref", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("ref")
+                ? _c("span", {
+                    staticClass: "text-danger",
+                    domProps: {
+                      textContent: _vm._s(_vm.form.errors.get("ref"))
+                    }
+                  })
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group m-1" }, [
+              _c("label", { attrs: { for: "fa" } }, [_vm._v("Social Symbol:")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.fa,
+                    expression: "form.fa"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "fa", name: "fa" },
+                domProps: { value: _vm.form.fa },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "fa", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("fa")
+                ? _c("span", {
+                    staticClass: "text-danger",
+                    domProps: { textContent: _vm._s(_vm.form.errors.get("fa")) }
+                  })
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group m-1" }, [
+              _c("label", { attrs: { for: "project_id" } }, [
+                _vm._v("Associate Project ID:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.project_id,
+                    expression: "form.project_id"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number", id: "project_id", name: "project_id" },
+                domProps: { value: _vm.form.project_id },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "project_id", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("project_id")
+                ? _c("span", {
+                    staticClass: "text-danger",
+                    domProps: {
+                      textContent: _vm._s(_vm.form.errors.get("project_id"))
+                    }
+                  })
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group text-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.submit()
+                  }
+                }
+              },
+              [_vm._v("Confirm")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/views/Dashboard.vue?vue&type=template&id=1950de0a&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/dashboard/views/Dashboard.vue?vue&type=template&id=1950de0a& ***!
@@ -39840,7 +40205,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "section-cont p-4" }, [
-    _c("h2", [_vm._v("Socials")]),
+    _c("div", { staticClass: "d-flex flex-row justify-content-between m-1" }, [
+      _c("h2", [_vm._v("Socials")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d-flex flex-row p-1" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary m-1",
+            on: {
+              click: function($event) {
+                return _vm.show()
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-plus" })]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.social_id,
+              expression: "social_id"
+            }
+          ],
+          staticClass: "form-control input-lg m-1",
+          attrs: { type: "number", id: "idSelect", placeholder: "Social ID" },
+          domProps: { value: _vm.social_id },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.social_id = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-outline-primary m-1",
+            on: {
+              click: function($event) {
+                return _vm.show(_vm.social_id)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-edit" })]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -55839,6 +56256,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectForm_vue_vue_type_template_id_7459b0bd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectForm_vue_vue_type_template_id_7459b0bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SocialForm.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/dashboard/components/SocialForm.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SocialForm.vue?vue&type=template&id=2d42c9c1& */ "./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1&");
+/* harmony import */ var _SocialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SocialForm.vue?vue&type=script&lang=js& */ "./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SocialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/dashboard/components/SocialForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SocialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SocialForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SocialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SocialForm.vue?vue&type=template&id=2d42c9c1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/dashboard/components/SocialForm.vue?vue&type=template&id=2d42c9c1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SocialForm_vue_vue_type_template_id_2d42c9c1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

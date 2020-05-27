@@ -1,6 +1,23 @@
 <template>
   <div class="section-cont p-4">
-    <h2>Socials</h2>
+    <div class="d-flex flex-row justify-content-between m-1">
+      <h2>Socials</h2>
+      <div class="d-flex flex-row p-1">
+        <button @click="show()" class="btn btn-primary m-1">
+          <i class="fas fa-plus"></i>
+        </button>
+        <input
+          type="number"
+          class="form-control input-lg m-1"
+          id="idSelect"
+          placeholder="Social ID"
+          v-model="social_id"
+        />
+        <button @click="show(social_id)" class="btn btn-outline-primary m-1">
+          <i class="far fa-edit"></i>
+        </button>
+      </div>
+    </div>
     <div class="table-responsive">
       <datatable :columns="columns" :data="byID"></datatable>
     </div>
@@ -8,6 +25,8 @@
 </template>
 
 <script>
+import SocialForm from '../components/SocialForm';
+
 export default {
   mounted() {
     console.log("Social Component Mounted.");
@@ -50,7 +69,23 @@ export default {
           this.socials = res;
         })
         .catch(err => console.log(err));
+    },
+    show(id) {
+      this.$modal.show(
+        SocialForm,
+        {
+          social: _.find(this.socials, function(o) { return o.id == id; }),
+        },
+        {
+          scrollable: true,
+          adaptive: true,
+          clickToClose: false,
+          height: "auto",
+          width: 800
+        }
+      );
     }
+
   }
 };
 </script>

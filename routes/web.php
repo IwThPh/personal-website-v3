@@ -23,10 +23,17 @@ Route::get('/', function () {
 //Login Routes...
 Auth::routes(['register' => false, 'reset' => false]);
 
-Route::get('/dash', 'HomeController@index')->name('dashboard');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dash', 'HomeController@index')->name('dashboard');
+});
 
 //Socials
 Route::get('/socials', 'SocialController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/socials', 'SocialController@store');
+    Route::patch('/socials/{social}', 'SocialController@update');
+    Route::delete('/socials/{social}', 'SocialController@delete');
+});
 
 //Projects
 Route::get('/projects', 'ProjectController@index');
