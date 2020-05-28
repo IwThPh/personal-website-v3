@@ -78,7 +78,7 @@
                 <div class="col-sm m-1">
                     <div class="img-stack">
                         <div class="clip-border second"></div>
-                        <div class="clip-border"><img src="{{URL::asset("images/me.jpg")}}" alt="Me" class="portrait">
+                        <div class="clip-border"><img src="{{URL::asset("images/me.webp")}}" alt="Me" class="portrait">
                         </div>
                     </div>
                 </div>
