@@ -33,13 +33,10 @@
                     <div class="col">
                         <p class="text-justify">
                             Hard-working software engineer, looking to work on innovative technologies. I am ambitious
-                            to
-                            implement novel ideas and to take advantage of the opportunity to express creativity in new
-                            designs
-                            and techniques. I have already taken it upon myself to pro-actively research and learn about
-                            multiple development languages and tools. I am currently trying to improve on my skill set
-                            to
-                            develop my adaptability.</p>
+                            to implement novel ideas and to take advantage of the opportunity to express creativity in
+                            new designs and techniques. I have already taken it upon myself to pro-actively research and
+                            learn about multiple development languages and tools. I am currently trying to improve on my
+                            skill set to develop my adaptability.</p>
                     </div>
                     <div class="col">
                         <h6 class="text-center">Skills / Technologies</h6>
@@ -64,73 +61,65 @@
                     <div class="col">
                         <h6 class="text-truncate">{{$p->name}}</h6>
                         <hr>
-                        <p>
-                            {{$p->brief}}
-                        </p>
+                        <p>{{$p->brief}}</p>
                     </div>
                     @endforeach
                 </div>
                 @endforeach
             </div>
-            <div class="row mt-2">
-                <div class="ml-2 col">
-                    <h5>Education</h5>
-                    <hr>
-                    <h6>Software Engineering (BSc) at Swansea University</h6>
-                    <span style="font-size: 1em;">Current Performance: First class (1st). (July 13th Final Classification)</span>
-                    <br>
-                    <br>
-                    <p>
-                        <b>Modules undertaken:</b>
-                    </p>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-
-                                <td scope="row">Year 1</td>
-                                <td>
-                                    <p>
-                                        Programming 1 & 2, Professional Issues 1 & 2, Concepts of Computer Science 1 &
-                                        2,
-                                        Modelling Computing Systems 1 & 2.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row">Year 2</td>
-                                <td>
-                                    <p>
-                                        Declarative Programming, Concurrency, Software Engineering 1 & 2, Database
-                                        Systems,
-                                        Web Services, Computer Graphics, Algorithms.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row">Year 3</td>
-                                <td>
-                                    <p>
-                                        Software Testing, Software Management, Writing Mobile Apps, Web Application
-                                        Development, User Experience, and Advanced Object Oriented Programming.
-                                    </p>
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col">
-                    <h5>Experience</h5>
-                    <hr>
-                    @foreach ($experience->take(3) as $e)
-                    <h6>{{$e->name}}</h6>
-                    {{$e->location}}, {{$e->start_at}} to {{$e->end_at ?? "Present"}}
-                    <p>{{$e->desc}} </p>
-
-                    @endforeach
+            <div class="m-1 mt-2">
+                <h5>Education</h5>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h6>Software Engineering (BSc) at Swansea University</h6>
+                        <span style="font-size: 1em;">Current Performance: First class (1st). (July 13th Final
+                            Classification)</span>
+                        <div class="mt-4"></div>
+                        <h5>Experience</h5>
+                        <hr>
+                        @foreach ($experience->take(2) as $e)
+                        <h6>{{$e->name}}</h6>
+                        {{$e->location}}, {{$e->start_at}} to {{$e->end_at ?? "Present"}}
+                        <p>{{$e->desc}} </p>
+                        @endforeach
+                    </div>
+                    <div class="col">
+                        <p><b>Modules undertaken:</b></p>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Year 1</td>
+                                    <td>
+                                        <p>
+                                            Programming 1 & 2, Professional Issues 1 & 2, Concepts of Computer Science 1
+                                            & 2, Modelling Computing Systems 1 & 2.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Year 2</td>
+                                    <td>
+                                        <p>
+                                            Declarative Programming, Concurrency, Software Engineering 1 & 2, Database
+                                            Systems, Web Services, Computer Graphics, Algorithms.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Year 3</td>
+                                    <td>
+                                        <p>
+                                            Software Testing, Software Management, Writing Mobile Apps, Web Application
+                                            Development, User Experience, and Advanced Object Oriented Programming.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

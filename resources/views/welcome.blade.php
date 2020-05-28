@@ -45,6 +45,7 @@
                 </div>
             </div>
         </div>
+
         <div class="sidenav">
             <div class="links">
                 <a href="#about" class="nav-item">about me</a>
@@ -105,7 +106,9 @@
             </div>
             <div class="my-4 mx-sm-5">
                 <div class="row m-1 justify-content-center">
-                    <a href="/cv"><div class="btn btn-outline-primary m-1">View Résumé</div></a>
+                    <a href="/cv">
+                        <div class="btn btn-outline-primary m-1">View Résumé</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -133,14 +136,11 @@
                         <span class="d-flex flex-row m-2"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>
                                 {{$s->name}}</a></span>
                         @endforeach
-
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
     <script type="text/javascript" src="{{URL::asset('js/app.js')}}"></script>
 </body>
 
