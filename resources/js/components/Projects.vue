@@ -6,20 +6,28 @@
         v-for="project in byRank"
         v-bind:key="project.id"
       >
-        <img
-          v-bind:src="'storage/images/' + project.images[0].filename"
-          :width="200"
-          class="rounded mx-auto border-5 border-primary"
-        />
-        <div @click="show(project)" class="col-lg-8 col-md-12 m-4 justify-content-center">
+        <div class="my-auto">
+          <img
+            v-bind:src="'storage/images/' + project.images[0].filename"
+            :width="200"
+            class="rounded mx-auto border-5 border-primary"
+          />
+        </div>
+        <div class="col-lg-8 col-md-12 m-4 justify-content-center">
           <h3 class="section-subheader">{{ project.name }}</h3>
+          <div class="my-2">
+            <h6 class="text-center">Skills Used</h6>
+            <div class="row justify-content-center">
+              <span
+                class="badge badge-pill badge-secondary p-2 m-1"
+                v-for="skill in project.skills"
+                v-bind:key="project.id+'s'+skill.id"
+              >{{ skill.name }}</span>
+            </div>
+          </div>
           <p class="text-center">{{ project.brief }}</p>
           <div class="row justify-content-center">
-            <span
-              class="badge badge-pill badge-secondary p-2 m-1"
-              v-for="skill in project.skills"
-              v-bind:key="project.id+'s'+skill.id"
-            >{{ skill.name }}</span>
+            <div @click="show(project)" class="btn btn-primary m-2">View Details</div>
           </div>
         </div>
       </div>
@@ -28,8 +36,7 @@
 </template>
 
 <script>
-
-import ProjectModal from './ProjectModal';
+import ProjectModal from "./ProjectModal";
 
 export default {
   mounted() {
@@ -87,15 +94,18 @@ export default {
         .catch(err => console.log(err));
     },
     show(project) {
-      this.$modal.show(ProjectModal, {
+      this.$modal.show(
+        ProjectModal,
+        {
           project: project
-      },
-      {
+        },
+        {
           scrollable: true,
           adaptive: true,
-          height: 'auto',
-          width: 800,
-      },);
+          height: "auto",
+          width: 800
+        }
+      );
     }
   }
 };

@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="my-4 mx-sm-5">
-                <h4 class="text-center">my skills</h4>
+                <h5 class="text-center">my skills</h5>
                 <div class="row m-1 justify-content-center">
                     @foreach ($skills as $s)
                     <span class="badge badge-pill badge-secondary p-2 m-1">{{ $s->name }}</span>
@@ -107,7 +107,7 @@
             <div class="my-4 mx-sm-5">
                 <div class="row m-1 justify-content-center">
                     <a href="/cv">
-                        <div class="btn btn-outline-primary m-1">View Résumé</div>
+                        <div class="btn btn-primary m-1">View Résumé</div>
                     </a>
                 </div>
             </div>
