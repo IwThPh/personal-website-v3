@@ -11,6 +11,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class, 1)->create(["name" => "Iwan", "email" => "iwanthomphil@gmail.com"]);
+        if(config('admin.admin_name')) {
+            \App\User::firstOrCreate(
+                [
+                    'email' => config('admin.admin_email')], [
+                    'name' => config('admin.admin_name'),
+                    'password' => bcrypt(config('admin.admin_password')),
+                ]
+            );
+        }
     }
 }

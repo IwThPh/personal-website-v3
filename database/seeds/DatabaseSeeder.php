@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(SkillSeeder::class);
-        $this->call(ExperienceSeeder::class);
-        $this->call(ImageSeeder::class);
-        $this->call(ProjectSeeder::class);
+        // $this->call(ExperienceSeeder::class);
+        // $this->call(ImageSeeder::class);
+        // $this->call(ProjectSeeder::class);
         $this->call(SocialSeeder::class);
     }
 }

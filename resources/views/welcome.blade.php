@@ -69,7 +69,7 @@
             </div>
             <div class="hero-social d-flex flex-wrap justify-content-center align-items-center">
                 @foreach ($socials as $s)
-                <span class="m-4 d-inline-flex"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i>{{$s->name}}</a></span>
+                <span class="m-4 d-inline-flex"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i> {{$s->name}}</a></span>
                 @endforeach
             </div>
         </div>

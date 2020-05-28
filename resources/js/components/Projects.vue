@@ -3,6 +3,12 @@
     <div class="col justify-content-center">
       <div
         class="row m-0 my-2 m-sm-4 justify-content-center"
+        v-if="byRank.length == 0"
+      >
+      <h4>No Projects Found.</h4>
+      </div>
+      <div
+        class="row m-0 my-2 m-sm-4 justify-content-center"
         v-for="project in byRank"
         v-bind:key="project.id"
       >

@@ -1938,6 +1938,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Experience Component Mounted.");
@@ -2107,6 +2113,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProjectModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProjectModal */ "./resources/js/components/ProjectModal.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48408,28 +48420,34 @@ var render = function() {
   return _c("div", { staticClass: "section-cont p-sm-4" }, [
     _c(
       "div",
-      { staticClass: "d-flex flex-row" },
+      { staticClass: "d-flex flex-row justify-content-center" },
       [
-        _c(
-          "div",
-          { staticClass: "tab w-25" },
-          _vm._l(_vm.byStartDesc, function(experience) {
-            return _c(
-              "button",
-              {
-                key: experience.id,
-                staticClass: "tablinks p-2 text-break",
-                on: {
-                  click: function($event) {
-                    return _vm.open(experience.id, $event)
-                  }
-                }
-              },
-              [_vm._v(_vm._s(experience.name))]
+        _vm.byStartDesc.length == 0
+          ? _c(
+              "div",
+              { staticClass: "row m-0 my-2 m-sm-4 justify-content-center" },
+              [_c("h4", [_vm._v("No Experience Found.")])]
             )
-          }),
-          0
-        ),
+          : _c(
+              "div",
+              { staticClass: "tab w-25" },
+              _vm._l(_vm.byStartDesc, function(experience) {
+                return _c(
+                  "button",
+                  {
+                    key: experience.id,
+                    staticClass: "tablinks p-2 text-break",
+                    on: {
+                      click: function($event) {
+                        return _vm.open(experience.id, $event)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(experience.name))]
+                )
+              }),
+              0
+            ),
         _vm._v(" "),
         _vm._l(_vm.byStartDesc, function(experience) {
           return _c(
@@ -48617,79 +48635,91 @@ var render = function() {
     _c(
       "div",
       { staticClass: "col justify-content-center" },
-      _vm._l(_vm.byRank, function(project) {
-        return _c(
-          "div",
-          {
-            key: project.id,
-            staticClass: "row m-0 my-2 m-sm-4 justify-content-center"
-          },
-          [
-            _c("div", { staticClass: "my-auto" }, [
-              _c("img", {
-                staticClass: "rounded mx-auto border-5 border-primary",
-                attrs: {
-                  src: "storage/images/" + project.images[0].filename,
-                  width: 200
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
+      [
+        _vm.byRank.length == 0
+          ? _c(
               "div",
-              { staticClass: "col-lg-8 col-md-12 m-4 justify-content-center" },
-              [
-                _c("h3", { staticClass: "section-subheader" }, [
-                  _vm._v(_vm._s(project.name))
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "my-2" }, [
-                  _c("h6", { staticClass: "text-center" }, [
-                    _vm._v("Skills Used")
+              { staticClass: "row m-0 my-2 m-sm-4 justify-content-center" },
+              [_c("h4", [_vm._v("No Projects Found.")])]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._l(_vm.byRank, function(project) {
+          return _c(
+            "div",
+            {
+              key: project.id,
+              staticClass: "row m-0 my-2 m-sm-4 justify-content-center"
+            },
+            [
+              _c("div", { staticClass: "my-auto" }, [
+                _c("img", {
+                  staticClass: "rounded mx-auto border-5 border-primary",
+                  attrs: {
+                    src: "storage/images/" + project.images[0].filename,
+                    width: 200
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-8 col-md-12 m-4 justify-content-center"
+                },
+                [
+                  _c("h3", { staticClass: "section-subheader" }, [
+                    _vm._v(_vm._s(project.name))
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "row justify-content-center" },
-                    _vm._l(project.skills, function(skill) {
-                      return _c(
-                        "span",
-                        {
-                          key: project.id + "s" + skill.id,
-                          staticClass:
-                            "badge badge-pill badge-secondary p-2 m-1"
-                        },
-                        [_vm._v(_vm._s(skill.name))]
-                      )
-                    }),
-                    0
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-center" }, [
-                  _vm._v(_vm._s(project.brief))
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row justify-content-center" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn btn-primary m-2",
-                      on: {
-                        click: function($event) {
-                          return _vm.show(project)
+                  _c("div", { staticClass: "my-2" }, [
+                    _c("h6", { staticClass: "text-center" }, [
+                      _vm._v("Skills Used")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-center" },
+                      _vm._l(project.skills, function(skill) {
+                        return _c(
+                          "span",
+                          {
+                            key: project.id + "s" + skill.id,
+                            staticClass:
+                              "badge badge-pill badge-secondary p-2 m-1"
+                          },
+                          [_vm._v(_vm._s(skill.name))]
+                        )
+                      }),
+                      0
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(project.brief))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "btn btn-primary m-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.show(project)
+                          }
                         }
-                      }
-                    },
-                    [_vm._v("View Details")]
-                  )
-                ])
-              ]
-            )
-          ]
-        )
-      }),
-      0
+                      },
+                      [_vm._v("View Details")]
+                    )
+                  ])
+                ]
+              )
+            ]
+          )
+        })
+      ],
+      2
     )
   ])
 }
