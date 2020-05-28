@@ -11468,6 +11468,10 @@ a.anchor {
   flex-direction: row-reverse !important;
 }
 
+.education-section {
+  max-width: 992px;
+}
+
 .experience-section {
   max-width: 992px;
   margin-bottom: 0px;

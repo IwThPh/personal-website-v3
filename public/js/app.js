@@ -60947,14 +60947,17 @@ $(document).ready(function () {
     var winOff = winTop + winHeight / 2;
     var section1Height = $(".about-section").offset().top;
     var section2Height = $(".project-section").offset().top;
-    var section3Height = $(".experience-section").offset().top;
+    var section3Height = $(".education-section").offset().top;
+    var section4Height = $(".experience-section").offset().top;
 
     if (winOff >= section1Height && winOff <= section2Height) {
       handlePointer(items.item(0));
     } else if (winOff >= section2Height && winOff <= section3Height) {
       handlePointer(items.item(1));
-    } else if (winOff >= section3Height) {
+    } else if (winOff >= section3Height && winOff <= section4Height) {
       handlePointer(items.item(2));
+    } else if (winOff >= section4Height) {
+      handlePointer(items.item(3));
     } else {
       handlePointer(null);
     }

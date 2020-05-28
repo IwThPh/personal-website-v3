@@ -32,6 +32,7 @@
                             <ul>
                                 <li><a href="#about" class="mobile-nav-item">about me</a></li>
                                 <li><a href="#projects" class="mobile-nav-item">projects</a></li>
+                                <li><a href="#education" class="mobile-nav-item">education</a></li>
                                 <li><a href="#experience" class="mobile-nav-item">experience</a></li>
                             </ul>
                             <div class="socials d-flex flex-wrap justify-content-center">
@@ -50,6 +51,7 @@
             <div class="links">
                 <a href="#about" class="nav-item">about me</a>
                 <a href="#projects" class="nav-item">projects</a>
+                <a href="#education" class="nav-item">education</a>
                 <a href="#experience" class="nav-item">experience</a>
                 <div class="nav-pointer">
                     <svg height="33" width="22">
@@ -117,6 +119,48 @@
             <a name="projects" class="anchor"></a>
             <h2 class="section-header">projects</h2>
             <projects></projects>
+        </div>
+
+        <div class="section education-section shadow">
+            <a name="education" class="anchor"></a>
+            <h2 class="section-header">education</h2>
+            <div class="section-cont p-4">
+
+                <h4>Software Engineering (BSc) at Swansea University</h4>
+                <h5>Current Performance: First class (1st). (July 13th Final Classification)</h5>
+                <p><b>Modules undertaken:</b></p>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td scope="row">Year 1</td>
+                            <td>
+                                <p>
+                                    Programming 1 & 2, Professional Issues 1 & 2, Concepts of Computer Science 1
+                                    & 2, Modelling Computing Systems 1 & 2.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Year 2</td>
+                            <td>
+                                <p>
+                                    Declarative Programming, Concurrency, Software Engineering 1 & 2, Database
+                                    Systems, Web Services, Computer Graphics, Algorithms.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Year 3</td>
+                            <td>
+                                <p>
+                                    Software Testing, Software Management, Writing Mobile Apps, Web Application
+                                    Development, User Experience, and Advanced Object Oriented Programming.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="section experience-section shadow">
