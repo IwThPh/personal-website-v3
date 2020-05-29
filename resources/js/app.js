@@ -63,7 +63,7 @@ $(document).ready(function() {
         item.classList.contains("active") && handlePointer(item);
     });
 
-    $(window).scroll(function() {
+    $(window).on('scroll', _.throttle(function() {
         document.documentElement.style.setProperty(
             "--scroll-y",
             `${window.scrollY}px`
@@ -87,5 +87,5 @@ $(document).ready(function() {
         } else {
             handlePointer(null);
         }
-    });
+    }, 150));
 });

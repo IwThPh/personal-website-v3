@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\image;
+use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\skill;
+use App\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

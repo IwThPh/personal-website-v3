@@ -60970,7 +60970,7 @@ $(document).ready(function () {
     });
     item.classList.contains("active") && handlePointer(item);
   });
-  $(window).scroll(function () {
+  $(window).on('scroll', _.throttle(function () {
     document.documentElement.style.setProperty("--scroll-y", "".concat(window.scrollY, "px"));
     var winTop = $(window).scrollTop();
     var winHeight = $(window).height();
@@ -60991,7 +60991,7 @@ $(document).ready(function () {
     } else {
       handlePointer(null);
     }
-  });
+  }, 150));
 });
 
 /***/ }),

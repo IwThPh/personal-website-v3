@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Iwan Phillips - Developer</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,600" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script defer src="{{URL::asset('js/fa/fa.js')}}"></script>
@@ -81,7 +80,7 @@
                 <div class="col-sm m-1">
                     <div class="img-stack">
                         <div class="clip-border second"></div>
-                        <div class="clip-border"><img src="{{URL::asset("images/me.webp")}}" alt="Me" class="portrait">
+                        <div class="clip-border"><img src="{{URL::asset("images/me.webp")}}" width="190" height="190" alt="Me" class="portrait">
                         </div>
                     </div>
                 </div>
