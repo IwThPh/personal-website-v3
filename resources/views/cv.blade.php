@@ -61,7 +61,7 @@
                     <div class="col">
                         <h6 class="text-truncate">{{$p->name}}</h6>
                         <hr>
-                        <p>{{$p->brief}}</p>
+                        <p>{!!$p->brief!!}</p>
                     </div>
                     @endforeach
                 </div>
@@ -81,7 +81,7 @@
                         @foreach ($experience->take(2) as $e)
                         <h6>{{$e->name}}</h6>
                         {{$e->location}}, {{$e->start_at}} to {{$e->end_at ?? "Present"}}
-                        <p>{{$e->desc}} </p>
+                        <p>{!!$e->desc!!} </p>
                         @endforeach
                     </div>
                     <div class="col">
