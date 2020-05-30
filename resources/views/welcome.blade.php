@@ -62,9 +62,9 @@
 
         <div class="hero-section shadow">
             <div class="hero-container">
-                <h2>hi, my name is</h2>
+                <h2>Hi, my name is</h2>
                 <h1>Iwan Phillips</h1>
-                <h2>i’m a software developer in the UK.</h2>
+                <h2>I’m a software developer in the UK.</h2>
             </div>
             <div class="hero-social d-flex flex-wrap justify-content-center align-items-center">
                 @foreach ($socials as $s)
