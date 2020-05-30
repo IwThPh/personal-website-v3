@@ -31,7 +31,7 @@
               >{{ skill.name }}</span>
             </div>
           </div>
-          <p class="text-center">{{ project.brief }}</p>
+            <div class="text-center" v-html="project.brief"> </div>
           <div class="row justify-content-center">
             <div @click="show(project)" class="btn btn-primary m-2">View Details</div>
           </div>

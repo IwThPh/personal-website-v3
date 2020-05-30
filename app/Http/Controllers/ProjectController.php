@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use App\Project;
+use App\Http\Resources\Project as ProjectResource;
 use App\Skill;
 use App\Social;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return response(Project::all()->sortBy("rank")->jsonSerialize(), Response::HTTP_OK);
+        return response(ProjectResource::collection(Project::all()->sortBy("rank")->jsonSerialize(), Response::HTTP_OK));
     }
 
     /**

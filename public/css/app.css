@@ -11218,6 +11218,14 @@ body {
   scrollbar-track-color: #f08155;
 }
 
+.editor-cont .ProseMirror {
+  padding: 1rem;
+}
+
+.editor-cont *:focus {
+  outline: none;
+}
+
 .close-btn {
   position: absolute;
   top: 15px;

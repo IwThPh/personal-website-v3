@@ -1,11 +1,8 @@
 <template>
   <div class="section-cont p-sm-4">
     <div class="d-flex flex-row justify-content-center">
-      <div
-        class="row m-0 my-2 m-sm-4 justify-content-center"
-        v-if="byStartDesc.length == 0"
-      >
-      <h4>No Experience Found.</h4>
+      <div class="row m-0 my-2 m-sm-4 justify-content-center" v-if="byStartDesc.length == 0">
+        <h4>No Experience Found.</h4>
       </div>
       <div class="tab w-25" v-else>
         <button
@@ -27,7 +24,7 @@
           <h4
             class="font-weight-light"
           >{{experience.start_at + ' to '}}{{experience.end_at||'Present'}}</h4>
-          <p>{{experience.desc}}</p>
+          <div v-html="experience.desc"></div>
         </div>
       </div>
     </div>

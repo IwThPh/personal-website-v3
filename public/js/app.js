@@ -1941,9 +1941,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Experience Component Mounted.");
@@ -48477,7 +48474,9 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(experience.desc))])
+                  _c("div", {
+                    domProps: { innerHTML: _vm._s(experience.desc) }
+                  })
                 ]
               )
             ]
@@ -48545,7 +48544,7 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _c("p", {}, [_vm._v(_vm._s(_vm.project.desc))]),
+      _c("div", { domProps: { innerHTML: _vm._s(_vm.project.desc) } }),
       _vm._v(" "),
       _c("div", { staticClass: "my-2" }, [
         _c("h4", [_vm._v("Skills Used")]),
@@ -48695,9 +48694,10 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-center" }, [
-                    _vm._v(_vm._s(project.brief))
-                  ]),
+                  _c("div", {
+                    staticClass: "text-center",
+                    domProps: { innerHTML: _vm._s(project.brief) }
+                  }),
                   _vm._v(" "),
                   _c("div", { staticClass: "row justify-content-center" }, [
                     _c(

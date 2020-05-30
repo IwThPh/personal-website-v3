@@ -55,7 +55,7 @@
         </div>
         <div class="form-group m-1">
           <label for="desc">Experience Description:</label>
-          <textarea type="text" class="form-control" id="desc" name="desc" v-model="form.desc"></textarea>
+          <tiptapeditor :data.sync="form.desc"></tiptapeditor>
           <span class="text-danger" v-if="form.errors.has(`desc`)" v-text="form.errors.get(`desc`)"></span>
         </div>
         <div class="form-group text-right">
@@ -67,6 +67,7 @@
 </template>
 <script>
 import Form from "../../scripts/form";
+import TipTapEditor from "./TipTapEditor";
 
 export default {
   name: "ExperienceForm",
@@ -83,8 +84,7 @@ export default {
       })
     };
   },
-  mounted() {
-    console.log("Mounted");
+  created() {
     if (
       this.experience !== null &&
       this.experience !== "" &&

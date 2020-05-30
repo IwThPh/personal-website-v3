@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "swiper": "^5.4.0",
+        "tiptap": "^1.27.1",
+        "tiptap-extensions": "^1.29.1",
         "vue-awesome-swiper": "^4.1.1",
         "vue-js-modal": "^2.0.0-rc.3",
         "vuejs-datatable": "^2.0.0-alpha.7"

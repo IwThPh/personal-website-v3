@@ -4,6 +4,17 @@ body {
     overflow-x: hidden;
 }
 
+.editor-cont{
+    .ProseMirror{
+        padding: 1rem;
+    }
+    * {
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
 .close-btn {
     position: absolute;
     top: 15px;

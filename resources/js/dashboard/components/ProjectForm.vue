@@ -125,7 +125,7 @@
         </div>
         <div class="form-group">
           <label for="brief">Project Brief:</label>
-          <textarea class="form-control" row="3" id="brief" name="brief" v-model="form.brief"></textarea>
+          <tiptapeditor :data.sync="form.brief"></tiptapeditor>
           <span
             class="text-danger"
             v-if="form.errors.has(`brief`)"
@@ -134,7 +134,7 @@
         </div>
         <div class="form-group">
           <label for="desc">Project Description:</label>
-          <textarea class="form-control" row="5" id="desc" name="desc" v-model="form.desc"></textarea>
+          <tiptapeditor :data.sync="form.desc"></tiptapeditor>
           <span class="text-danger" v-if="form.errors.has(`desc`)" v-text="form.errors.get(`desc`)"></span>
         </div>
 
@@ -145,7 +145,11 @@
             v-bind:key="'image'+counter"
             class="img-container"
           >
-            <img :src="'storage/images/'+project.images[counter].filename" :width="120" class="rounded m-1" />
+            <img
+              :src="'storage/images/'+project.images[counter].filename"
+              :width="120"
+              class="rounded m-1"
+            />
             <div class="img-remove">
               <button @click.prevent="deleteImage(counter)" class="btn btn-danger">
                 <i class="far fa-trash-alt"></i>
@@ -175,6 +179,7 @@
 </template>
 <script>
 import Form from "../../scripts/form";
+import TipTapEditor from "./TipTapEditor";
 
 export default {
   name: "ProjectForm",
@@ -206,8 +211,8 @@ export default {
       }
     };
   },
-  mounted() {
-    console.log("Mounted");
+  created() {
+    this.fetchSkills();
     if (
       this.project !== null &&
       this.project !== "" &&
@@ -224,9 +229,6 @@ export default {
       this.form.skill_ids = this.project.skills.map(x => x.id);
       this.form.image_ids = this.project.images.map(x => x.id);
     }
-  },
-  created() {
-    this.fetchSkills();
   },
   methods: {
     fetchSkills(url) {
@@ -264,17 +266,13 @@ export default {
     },
     submit() {
       if (this.project === undefined) {
-        this.form
-          .post("/projects")
-          .then(() => {
-              this.$emit("close");
-          });
+        this.form.post("/projects").then(() => {
+          this.$emit("close");
+        });
       } else {
-        this.form
-          .patch("/projects/" + this.project.id)
-          .then(() => {
-              this.$emit('close');
-          });
+        this.form.patch("/projects/" + this.project.id).then(() => {
+          this.$emit("close");
+        });
       }
     }
   }

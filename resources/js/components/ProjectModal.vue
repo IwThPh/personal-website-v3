@@ -15,7 +15,7 @@
         </a>
       </div>
 
-      <p class>{{ project.desc }}</p>
+      <div v-html="project.desc"> </div>
 
       <div class="my-2">
         <h4>Skills Used</h4>

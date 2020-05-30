@@ -18,6 +18,8 @@ Vue.component("images", require("./dashboard/views/Images.vue").default);
 Vue.component("experiences",require("./dashboard/views/Experiences.vue").default);
 Vue.component("socails", require("./dashboard/views/Socials.vue").default);
 
+Vue.component("tiptapeditor", require("./dashboard/components/TipTapEditor.vue").default);
+
 Vue.component("projectForm", require("./dashboard/components/ProjectForm.vue").default);
 
 VuejsDatatableFactory.useDefaultType(false).registerTableType(
