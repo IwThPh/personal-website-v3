@@ -33,7 +33,7 @@
         <h4>Screenshots</h4>
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide v-for="image in project.images" v-bind:key="project.id+'i'+image.id">
-            <img class="rounded" :src="'storage/images/' + image.filename" :width="400" />
+            <img class="rounded mx-auto" :src="'storage/images/' + image.filename" :width="400" />
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
@@ -59,14 +59,14 @@ export default {
   data() {
     return {
       swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween: 30,
+        slidesPerView: 'auto',
+          centeredSlides: true,
+        spaceBetween: 15,
+        loop: true,
         autoplay: {
-          delay: 3500,
+          delay: 5000,
           disableOnInteraction: true
         },
-        loop: true,
-        centeredSlides: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true
@@ -79,19 +79,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/_variables.scss";
-
-.swiper {
-  height: 100%;
-  width: 100%;
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    background-position: center;
-    background-size: cover;
-  }
+.swiper-slide {
+    width: 400px;
 }
 .swiper-pagination {
   position: relative !important;
@@ -100,10 +89,10 @@ export default {
   .swiper-pagination-bullet {
     opacity: 1;
     border: #f5f5f5 solid 1px;
-    background-color: $offwhite;
+    background-color: $pri-color;
   }
   .swiper-pagination-bullet-active {
-    background-color: $pri-color;
+    background-color: $sec-color;
   }
 }
 .swiper-container-horizontal > .swiper-pagination-bullets {

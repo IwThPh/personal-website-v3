@@ -2078,14 +2078,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween: 30,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 15,
+        loop: true,
         autoplay: {
-          delay: 3500,
+          delay: 5000,
           disableOnInteraction: true
         },
-        loop: true,
-        centeredSlides: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true
@@ -6664,7 +6664,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".swiper[data-v-175290ff] {\n  height: 100%;\n  width: 100%;\n}\n.swiper .swiper-slide[data-v-175290ff] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n  font-weight: bold;\n  background-position: center;\n  background-size: cover;\n}\n.swiper-pagination[data-v-175290ff] {\n  position: relative !important;\n}\n.swiper-pagination[data-v-175290ff]  .swiper-pagination-bullet {\n  opacity: 1;\n  border: #f5f5f5 solid 1px;\n  background-color: #f5f5f5;\n}\n.swiper-pagination[data-v-175290ff]  .swiper-pagination-bullet-active {\n  background-color: #56d0ef;\n}\n.swiper-container-horizontal > .swiper-pagination-bullets[data-v-175290ff] {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".swiper-slide[data-v-175290ff] {\n  width: 400px;\n}\n.swiper-pagination[data-v-175290ff] {\n  position: relative !important;\n}\n.swiper-pagination[data-v-175290ff]  .swiper-pagination-bullet {\n  opacity: 1;\n  border: #f5f5f5 solid 1px;\n  background-color: #56d0ef;\n}\n.swiper-pagination[data-v-175290ff]  .swiper-pagination-bullet-active {\n  background-color: #f08155;\n}\n.swiper-container-horizontal > .swiper-pagination-bullets[data-v-175290ff] {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -48586,7 +48586,7 @@ var render = function() {
                     { key: _vm.project.id + "i" + image.id },
                     [
                       _c("img", {
-                        staticClass: "rounded",
+                        staticClass: "rounded mx-auto",
                         attrs: {
                           src: "storage/images/" + image.filename,
                           width: 400
