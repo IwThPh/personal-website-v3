@@ -1,5 +1,5 @@
 <template>
-  <div class="section-cont p-4">
+  <div class="section-cont p-sm-4">
     <div class="col justify-content-center">
       <div
         class="row m-0 my-2 m-sm-4 justify-content-center"
@@ -19,7 +19,7 @@
             class="rounded mx-auto border-5 border-primary"
           />
         </div>
-        <div class="col-lg-8 col-md-12 m-4 justify-content-center">
+        <div class="col-lg-8 col-md-12 m-1 m-sm-4 justify-content-center">
           <h3 class="section-subheader">{{ project.name }}</h3>
           <div class="my-2">
             <h6 class="text-center">Skills Used</h6>

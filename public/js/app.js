@@ -48633,7 +48633,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "section-cont p-4" }, [
+  return _c("div", { staticClass: "section-cont p-sm-4" }, [
     _c(
       "div",
       { staticClass: "col justify-content-center" },
@@ -48667,7 +48667,8 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-lg-8 col-md-12 m-4 justify-content-center"
+                  staticClass:
+                    "col-lg-8 col-md-12 m-1 m-sm-4 justify-content-center"
                 },
                 [
                   _c("h3", { staticClass: "section-subheader" }, [
