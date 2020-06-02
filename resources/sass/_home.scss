@@ -285,6 +285,9 @@ a.anchor {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    .hero-opacity{
+    width: 100vw;
+    height: 97vh;
     //Flex
     display: flex;
     flex-direction: column-reverse;
@@ -302,6 +305,12 @@ a.anchor {
             color: $pri-color;
             font-weight: 700;
         }
+    }
+    .hero-cta {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .hero-social {
         @media (max-width: 768px) {
@@ -328,6 +337,7 @@ a.anchor {
                 color: $sec-color;
             }
         }
+    }
     }
 }
 

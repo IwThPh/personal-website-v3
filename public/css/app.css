@@ -11491,29 +11491,41 @@ a.anchor {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.hero-section .hero-opacity {
+  width: 100vw;
+  height: 97vh;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
 }
 
-.hero-section .hero-container {
+.hero-section .hero-opacity .hero-container {
   position: relative;
   max-width: 60%;
 }
 
-.hero-section .hero-container h2 {
+.hero-section .hero-opacity .hero-container h2 {
   color: white;
   font-size: 2rem;
 }
 
-.hero-section .hero-container h1 {
+.hero-section .hero-opacity .hero-container h1 {
   font-size: 4rem;
   color: #56d0ef;
   font-weight: 700;
 }
 
-.hero-section .hero-social {
+.hero-section .hero-opacity .hero-cta {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-section .hero-opacity .hero-social {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -11524,26 +11536,26 @@ a.anchor {
 }
 
 @media (max-width: 768px) {
-  .hero-section .hero-social {
+  .hero-section .hero-opacity .hero-social {
     display: none;
     opacity: 0;
   }
 }
 
-.hero-section .hero-social a {
+.hero-section .hero-opacity .hero-social a {
   text-decoration: none;
 }
 
-.hero-section .hero-social a:link,
-.hero-section .hero-social a:visited {
+.hero-section .hero-opacity .hero-social a:link,
+.hero-section .hero-opacity .hero-social a:visited {
   color: #9c9c9c;
 }
 
-.hero-section .hero-social a:hover {
+.hero-section .hero-opacity .hero-social a:hover {
   color: white;
 }
 
-.hero-section .hero-social a:active {
+.hero-section .hero-opacity .hero-social a:active {
   color: #f08155;
 }
 

@@ -60983,6 +60983,7 @@ $(document).ready(function () {
     var section2Height = $(".project-section").offset().top;
     var section3Height = $(".education-section").offset().top;
     var section4Height = $(".experience-section").offset().top;
+    $(".hero-opacity").css("opacity", 1 - $(window).scrollTop() / (section1Height / 2));
 
     if (winOff >= section1Height && winOff <= section2Height) {
       handlePointer(items.item(0));

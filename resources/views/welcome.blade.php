@@ -61,6 +61,8 @@
         </div>
 
         <div class="hero-section shadow">
+            <div class="hero-opacity">
+
             <div class="hero-container">
                 <h2>Hi, my name is</h2>
                 <h1>Iwan Phillips</h1>
@@ -71,6 +73,12 @@
                 <span class="m-4 d-inline-flex"><a href="{{$s->ref}}"><i class="{{$s->fa}}"></i> {{$s->name}}</a></span>
                 @endforeach
             </div>
+            <div class="hero-cta m-1 justify-content-center">
+                <a href="/cv">
+                    <div class="btn btn-primary m-1">View Résumé</div>
+                </a>
+            </div>
+            </div>
         </div>
 
         <div class="section about-section shadow">
@@ -80,7 +88,8 @@
                 <div class="col-sm m-1">
                     <div class="img-stack">
                         <div class="clip-border second"></div>
-                        <div class="clip-border"><img src="{{URL::asset("images/me.webp")}}" width="190" height="190" alt="Me" class="portrait">
+                        <div class="clip-border"><img src="{{URL::asset("images/me.webp")}}" width="190" height="190"
+                                alt="Me" class="portrait">
                         </div>
                     </div>
                 </div>
