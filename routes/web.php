@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/cv', function () {
     $socials = App\Social::all()->whereNull('project_id');
     $skills = App\Skill::all();
-    $projects = App\Project::all()->take(4)->chunk(2);
+    $projects = App\Project::all()->sortBy("rank")->take(4)->chunk(2);
     $experience = App\Experience::all();
     return view('cv')->with([
         'skills' => $skills,

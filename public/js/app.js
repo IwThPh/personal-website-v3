@@ -2063,9 +2063,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2217,7 +2214,7 @@ __webpack_require__.r(__webpack_exports__);
         scrollable: true,
         adaptive: true,
         height: "auto",
-        width: 800
+        width: "80%"
       });
     }
   }
@@ -48509,67 +48506,73 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-4 d-flex flex-column" }, [
-    _c("div", {
-      staticClass: "close-btn",
-      on: {
-        click: function($event) {
-          return _vm.$emit("close")
+  return _c("div", { staticClass: "container py-4" }, [
+    _c(
+      "div",
+      {
+        staticClass: "btn btn-secondary close-btn",
+        on: {
+          click: function($event) {
+            return _vm.$emit("close")
+          }
         }
-      }
-    }),
+      },
+      [_vm._v("X")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "flex-column" }, [
-      _c("h3", { staticClass: "section-subheader" }, [
-        _vm._v(_vm._s(_vm.project.name))
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "flex-row justify-content-center m-2" },
-        _vm._l(_vm.project.socials, function(social) {
-          return _c(
-            "a",
-            {
-              key: _vm.project.id + "so" + social.id,
-              staticClass: "btn btn-sm btn-outline-primary p-2 m-1",
-              attrs: { href: social.ref }
-            },
-            [
-              _c("i", { class: social.fa }),
-              _vm._v("\n        " + _vm._s(social.name) + "\n      ")
-            ]
-          )
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _c("div", { domProps: { innerHTML: _vm._s(_vm.project.desc) } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "my-2" }, [
-        _c("h4", [_vm._v("Skills Used")]),
+    _c("div", { staticClass: "d-flex flex-wrap" }, [
+      _c("div", { staticClass: "container-sm col-12 col-xl-6" }, [
+        _c("h3", { staticClass: "section-subheader" }, [
+          _vm._v(_vm._s(_vm.project.name))
+        ]),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "row" },
-          _vm._l(_vm.project.skills, function(skill) {
+          { staticClass: "flex-row justify-content-center m-2" },
+          _vm._l(_vm.project.socials, function(social) {
             return _c(
-              "span",
+              "a",
               {
-                key: _vm.project.id + "s" + skill.id,
-                staticClass: "badge badge-pill badge-secondary p-2 m-1"
+                key: _vm.project.id + "so" + social.id,
+                staticClass: "btn btn-sm btn-outline-primary p-2 m-1",
+                attrs: { href: social.ref }
               },
-              [_vm._v(_vm._s(skill.name))]
+              [
+                _c("i", { class: social.fa }),
+                _vm._v("\n          " + _vm._s(social.name) + "\n        ")
+              ]
             )
           }),
           0
-        )
+        ),
+        _vm._v(" "),
+        _c("div", { domProps: { innerHTML: _vm._s(_vm.project.desc) } })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "my-2" }, [
+      _c("div", { staticClass: "container-sm col-12 col-xl-6" }, [
+        _c("div", { staticClass: "my-2" }, [
+          _c("h4", [_vm._v("Skills Used")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.project.skills, function(skill) {
+              return _c(
+                "span",
+                {
+                  key: _vm.project.id + "s" + skill.id,
+                  staticClass: "badge badge-pill badge-secondary p-2 m-1"
+                },
+                [_vm._v(_vm._s(skill.name))]
+              )
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
         _c(
           "div",
-          { staticClass: "flex-column" },
+          { staticClass: "my-2" },
           [
             _c("h4", [_vm._v("Screenshots")]),
             _vm._v(" "),

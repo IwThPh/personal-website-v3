@@ -11218,6 +11218,14 @@ body {
   scrollbar-track-color: #f08155;
 }
 
+.vm--modal {
+  position: relative !important;
+  margin: auto !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+}
+
 .editor-cont .ProseMirror {
   padding: 1rem;
 }
@@ -11228,20 +11236,8 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.close-btn::before {
-  content: "X";
-  color: #c9c9c9;
-  font-size: 1.2rem;
-  font-weight: 500;
-  font-family: Arial, sans-serif;
-}
-
-.close-btn::before:hover::before {
-  color: #f08155;
+  top: 25px;
+  right: 25px;
 }
 
 .img-container {

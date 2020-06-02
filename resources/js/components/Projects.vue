@@ -109,7 +109,7 @@ export default {
           scrollable: true,
           adaptive: true,
           height: "auto",
-          width: 800
+          width: "80%"
         }
       );
     }
