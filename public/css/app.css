@@ -11235,6 +11235,7 @@ body {
 }
 
 .close-btn {
+  z-index: 9999;
   position: absolute;
   top: 25px;
   right: 25px;
