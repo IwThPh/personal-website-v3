@@ -73,8 +73,7 @@
                 <div class="row">
                     <div class="col">
                         <h6>Software Engineering (BSc) at Swansea University</h6>
-                        <span style="font-size: 1em;">Current Performance: First class (1st). (July 13th Final
-                            Classification)</span>
+                        <span style="font-size: 1em;">Final Classification: First class (1st).</span>
                         <div class="mt-4"></div>
                         <h5>Experience</h5>
                         <hr>

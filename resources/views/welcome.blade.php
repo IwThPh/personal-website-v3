@@ -97,7 +97,7 @@
                     <p>
                         My name is Iwan Phillips.
 
-                        I am a 20 year old, software developer based in the UK.
+                        I am a 21 year old, software developer based in the UK.
                         I enjoy working on projects involving a complete technology stack.
                         Take a look at my past projects below.
                     </p>
@@ -135,7 +135,7 @@
             <div class="section-cont p-4">
 
                 <h4>Software Engineering (BSc) at Swansea University</h4>
-                <h5>Current Performance: First class (1st). (July 13th Final Classification)</h5>
+                <h5>Final Classification: First class (1st)</h5>
                 <p><b>Modules undertaken:</b></p>
                 <table class="table">
                     <tbody>
