@@ -31,5 +31,6 @@
         "vue-awesome-swiper": "^4.1.1",
         "vue-js-modal": "^2.0.0-rc.3",
         "vuejs-datatable": "^2.0.0-alpha.7"
-    }
+    },
+    "name": "personal-website-v3"
 }

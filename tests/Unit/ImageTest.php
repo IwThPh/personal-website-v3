@@ -22,16 +22,4 @@ class ImageTest extends TestCase
         $image = factory(Image::class)->create();
         $this->assertInstanceOf(BelongsToMany::class, $image->projects());
     }
-
-    /**
-     * @test
-     * Test if an image can have many socials.
-     *
-     * @return void
-     */
-    public function image_has_socials()
-    {
-        $image = factory(Image::class)->create();
-        $this->assertInstanceOf(BelongsToMany::class, $image->socials());
-    }
 }

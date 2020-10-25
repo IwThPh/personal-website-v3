@@ -10,7 +10,7 @@ set('application', 'portfolio');
 set('repository', 'git@github.com:IwThPh/personal-website-v3.git');
 
 //PHP Bin
-set('bin/php', '/usr/local/bin/php');
+set('bin/php', '/usr/bin/php');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
@@ -26,7 +26,7 @@ add('writable_dirs', []);
 // Hosts
 
 host('iwanphillips.dev')
-	->user('iwanp')
+	->user('portfolio')
 	->stage('live')
 	->set('branch', 'live')
     ->set('deploy_path', '~/{{application}}');    
