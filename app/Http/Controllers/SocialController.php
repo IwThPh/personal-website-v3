@@ -69,7 +69,7 @@ class SocialController extends Controller
      */
     public function destroy(Social $social)
     {
-        Social::destroy($id);
+        $social->delete();
         return response(null, Response::HTTP_OK);
     }
 

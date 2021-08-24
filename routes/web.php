@@ -1,5 +1,9 @@
 <?php
 
+use App\Experience;
+use App\Project;
+use App\Skill;
+use App\Social;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,65 +18,43 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    $socials = App\Social::all()->whereNull('project_id');
-    $skills = App\Skill::all();
-    return view('welcome')->with([
-        'skills' => $skills,
-        'socials' => $socials,
-    ]);
+	$socials = Social::whereNull('project_id')->get();
+	$skills = Skill::orderBy('name')->get();
+
+	return view('welcome')->with([
+		'skills' => $skills,
+		'socials' => $socials,
+	]);
 });
 
 Route::get('/cv', function () {
-    $socials = App\Social::all()->whereNull('project_id');
-    $skills = App\Skill::all();
-    $projects = App\Project::all()->sortBy("rank")->take(4)->chunk(2);
-    $experience = App\Experience::all();
-    return view('cv')->with([
-        'skills' => $skills,
-        'socials' => $socials,
-        'projects' => $projects,
-        'experience' => $experience,
-    ]);
+	$socials = Social::whereNull('project_id')->get();
+	$skills = Skill::orderBy('name')->get();
+	$projects = Project::orderBy("rank")->get()->take(4)->chunk(2);
+	$experience = Experience::get();
+
+	return view('cv')->with([
+		'skills' => $skills,
+		'socials' => $socials,
+		'projects' => $projects,
+		'experience' => $experience,
+	]);
 });
 
 //Login Routes...
-Auth::routes(['register' => false, 'reset' => false]);
+Auth::routes(['register' => FALSE, 'reset' => FALSE]);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dash', 'HomeController@index')->name('dashboard');
+	Route::get('/dash', 'HomeController@index')->name('dashboard');
+
+	Route::resource('socials', 'SocialController')->only([ 'store', 'update', 'destroy' ]);
+	Route::resource('projects', 'ProjectController')->only([ 'store', 'update', 'destroy' ]);
+	Route::resource('experiences', 'ExperienceController')->only([ 'store', 'update', 'destroy' ]);
+	Route::resource('skills', 'SkillController')->only([ 'store', 'update', 'destroy' ]);
 });
 
-//Socials
 Route::get('/socials', 'SocialController@index');
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/socials', 'SocialController@store');
-    Route::patch('/socials/{social}', 'SocialController@update');
-    Route::delete('/socials/{social}', 'SocialController@delete');
-});
-
-//Projects
 Route::get('/projects', 'ProjectController@index');
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/projects', 'ProjectController@store');
-    Route::patch('/projects/{project}', 'ProjectController@update');
-    Route::delete('/projects/{project}', 'ProjectController@delete');
-});
-
-//Experience
 Route::get('/experiences', 'ExperienceController@index');
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/experiences', 'ExperienceController@store');
-    Route::patch('/experiences/{experience}', 'ExperienceController@update');
-    Route::delete('/experiences/{experience}', 'ExperienceController@delete');
-});
-
-//Images
 Route::get('/imageables', 'ImageController@index');
-
-//Skills
 Route::get('/skills', 'SkillController@index');
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/skills', 'SkillController@store');
-    Route::patch('/skills/{skill}', 'SkillController@update');
-    Route::delete('/skills/{skill}', 'SkillController@delete');
-});

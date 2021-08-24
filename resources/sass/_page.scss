@@ -12,7 +12,6 @@ body {
 }
 .page {
     width: 210mm;
-    max-height: 297mm;
     margin: 10mm auto;
     border: 1px #d3d3d3 solid;
     border-radius: 5px;
@@ -21,7 +20,6 @@ body {
 }
 .subpage {
     padding: 0.5cm;
-    height: 297mm;
 }
 
 @page {
